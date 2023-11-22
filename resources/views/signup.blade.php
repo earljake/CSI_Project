@@ -11,7 +11,8 @@
 <div class="wrapper">
 <div class="wrapper-left">
     <div class="logo">
-   
+        <img src="img/logo.png" id="logo1">
+        <img src="img/bg1.png" id="asa">
     </div>
     </div>
 <div class="wrapper-right">
