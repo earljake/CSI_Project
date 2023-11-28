@@ -25,3 +25,5 @@ Route::get('/login', function () {
 });
 
 Route::post('/login',[employeeController::class,'login']);
+
+Route::get('/register', [employeeController::class, 'showRegistrationForm'])->name('register');

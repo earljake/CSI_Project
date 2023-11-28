@@ -25,9 +25,9 @@
             <div class="select-box">
                 <select name="designation">
                     <option value="" disabled selected>Select Designation</option>
-                    <option value="Engineering">Engineering</option>
-                    <option value="Marketing">Marketing and Sales</option>
-                    <option value="Accounting">Accounting</option>
+                    <option value="1">Engineering</option>
+                    <option value="2">Marketing and Sales</option>
+                    <option value="3">Accounting</option>
                 </select>
             </div>  
         <input name="firstname" type="text" class="input-box" placeholder="First name">

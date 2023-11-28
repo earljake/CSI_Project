@@ -45,4 +45,9 @@ class employeeController extends Controller
 
         return redirect('/login');
     }
+
+    public function showRegistrationForm()
+    {
+        return view('signup'); // View name should match your actual view file
+    }
 }

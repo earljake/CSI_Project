@@ -33,7 +33,7 @@
                             
                             <button class="btn">Login</button>
                             <div class="Register">
-                                <p>Not a member? <a href="#"> Sign up now</a></p>
+                                <p>Not a member?  <a href="{{ route('register') }}"> Sign up now</a></p>
                             </div>
                         </form>
                     </div>
