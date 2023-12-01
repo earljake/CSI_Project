@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Sign Up Now</title>
+    <title>Employee Registration</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
@@ -30,8 +30,8 @@
                     <option value="3">Accounting</option>
                 </select>
             </div>  
-        <input name="firstname" type="text" class="input-box" placeholder="First name">
-        <input name="lastname" type="text" class="input-box" placeholder="Last name">
+        <input name="firstname" type="text" class="input-box" placeholder="First Name">
+        <input name="lastname" type="text" class="input-box" placeholder="Last Name">
         <input name="username" type="text" class="input-box" placeholder="Username">
         <input name="password" type="password" class="input-box" placeholder="Password (minimum 8 characters)">
         <button id="btn">Sign Up</button>
