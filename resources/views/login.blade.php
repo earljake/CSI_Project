@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Converge.IT Solutions Monitoring System</title>
     <link rel="stylesheet" href="{{ asset('css/loginstyle.css') }}">
    
 </head>
@@ -33,7 +33,7 @@
                             
                             <button class="btn">Login</button>
                             <div class="Register">
-                                <p>Not a member? <a href="#">Sign up now</a></p>
+                                <p>Not a member?  <a href="{{ route('register') }}"> Sign up now</a></p>
                             </div>
                         </form>
                     </div>

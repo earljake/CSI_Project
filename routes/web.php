@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('signup');
+    return view('clientreg');
 });
 
 Route::post('/register',[employeeController::class,'register']);
@@ -25,3 +25,7 @@ Route::get('/login', function () {
 });
 
 Route::post('/login',[employeeController::class,'login']);
+
+Route::get('/register', [employeeController::class, 'showRegistrationForm'])->name('register');
+
+Route::post('/clientreg',[employeeController::class,'clientreg']);
