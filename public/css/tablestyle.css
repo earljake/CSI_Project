@@ -1,0 +1,62 @@
+body{
+    margin:0;
+    padding:20px;
+    font-family: sans-serif;
+    background: url('/img/back.jpg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+*{
+    box-sizing: border-box; 
+}
+
+.table{
+    width:80%;
+    height: 80%;
+    border-collapse: collapse;
+
+}
+.table td,.table th{
+    padding: 12px 15px;
+    border:1px solid #3A4B85;
+    font-size: 16px;
+    text-align: justify;
+    text-transform: capitalize;
+}
+thead{
+    background: #CED7F5;
+}
+tbody{
+    background: white;
+}
+
+.backbtn{
+    width: 20%;
+    height: 5%;
+    border: none;
+    max-height: 100px;
+    max-width: 100px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #ACB9E8;
+}
+
+.wholetbl{
+    display: flex;
+    margin-top: 5%;
+    justify-content: center;
+}
+
+@media (max-width:1000px) {
+    .wholetbl{
+        width: 150%;
+    
+
+
+
+
+        
+}
+}
