@@ -1,0 +1,66 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: url(background.jpg);
+    background-position: center;
+    background-size: cover;
+
+}
+
+*{
+    box-sizing: border-box; 
+    font-size: 16px;
+
+}
+
+.table{
+    width:80%;
+    border-collapse: collapse;
+
+
+}
+.table td,.table th{
+    padding: 12px 15px;
+    border:1px solid #3A4B85;
+    font-size: 16px;
+    text-align: center;
+    text-transform: capitalize;
+}
+thead{
+    background: #CED7F5;
+}
+tbody{
+    background: white;
+}
+
+.backbtn{
+    width: 20%;
+    max-width: 50px;
+    height: 5%;
+    border: none;
+    max-height: 100px;
+    max-width: 100px;
+    border-radius: 20px;
+    background: #ACB9E8;
+    cursor: pointer;
+}
+
+.wholetbl{
+    display: flex;
+    margin-top: 5%;
+    justify-content: center; 
+}
+
+
+
+
+
+
+
+@media (max-width: 900px) {
+   .wholetbl  {
+    
+    width:fixed;
+      }
+}
