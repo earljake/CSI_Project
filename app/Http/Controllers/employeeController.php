@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 
+
 use App\Models\User;
+use App\Models\Client;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
@@ -45,4 +47,31 @@ class employeeController extends Controller
 
         return redirect('/login');
     }
+
+    public function showRegistrationForm()
+    {
+        return view('signup'); // View name should match your actual view file
+    }
+
+
+    public function clientreg(Request $request) {
+        $fields = $request -> validate([
+            'category' => 'required',
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'company_name' => 'required',
+            'address'=> 'required',
+            'email'=> 'required',
+            'phone_number'=> 'required',
+
+            
+        ]);
+    
+        $client = Client::create($fields);
+   
+        return 'goods';  
+    }
+    
 }
+
+

@@ -124,15 +124,16 @@ button{
     color: #6F81BE;
 }
 .register{
-    font-size: .9em;
-    color: blue;
+    font-family: 'century gothic', sans-serif;
+    
+    font-style: normal;
     text-align: center;
     margin: 25px 0 10px;
 }
 .register p a{
     text-decoration: none;
-    color: blue;
-    font-weight: 600;
+    color: #F26722;
+    
 }
 .register p a:hover{
     text-decoration: underline;
