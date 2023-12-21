@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\employeeController;
+use App\Http\Controllers\ShowController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +30,5 @@ Route::post('/login',[employeeController::class,'login']);
 Route::get('/register', [employeeController::class, 'showRegistrationForm'])->name('register');
 
 Route::post('/clientreg',[employeeController::class,'clientreg']);
+
+Route::get('/',[ShowController::class,'show']);

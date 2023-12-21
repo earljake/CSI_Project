@@ -11,127 +11,40 @@
 <div class="wholetbl">   
 <table class="table">
 <thead>
-<th>CustomerCategory</th>
-<th>Lastname</th>
-<th>Firstname</th>
-<th>Middlename</th>
+<th>Customer Category</th>
+<th>Last Name</th>
+<th>First Name</th>
+
 <th>Email</th>
 <th>Address</th>
-<th>MobileNumber</th>
-<th>TelephoneNumber</th>
-<th>Companyname</th>
+<th>Mobile Number</th>
+
+<th>Company Name</th>
 
 </thead>
 <tbody>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
+    
+      @foreach ($data as $data)
+      <tr>
+    
+        <td data-label="Customer">{{$data->category}}</td>
+        <td data-label="Customer">{{$data->lastname}}</td>
+        <td data-label="Customer">{{$data->firstname}}</td>  
+        <td data-label="Customer">{{$data->email}}</td>
+        <td data-label="Customer">{{$data->address}}</td>
+        <td data-label="Customer">{{$data->phone_number }}</td> 
+        <td data-label="Customer">{{$data->company_name}}</td>
+
+     
+    
+    
+       
               
     </tr>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-             
-    </tr>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-             
-    </tr>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-             
-    </tr>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-          
-    </tr>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-             
-    </tr>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-             
-    </tr>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-              
-    </tr>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-              
-    </tr>
+   
+
 </tbody>
+@endforeach
 </table>
 </div>   
 </body>
