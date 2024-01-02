@@ -13,7 +13,7 @@
         </div>
         
         <div class="form">
-            <form action="/clientreg" method="POST">
+            <form action="{{ route('clientreg') }}" method="POST">
                 @csrf
             <div class="header">
             <h1> Registration of Client</h1></div>

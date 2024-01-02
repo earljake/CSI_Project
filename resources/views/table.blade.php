@@ -9,6 +9,7 @@
 <body>
     <button class="backbtn">Back</button>
 <div class="wholetbl">   
+    @csrf
 <table class="table">
 <thead>
 <th>Customer</th>

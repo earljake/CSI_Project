@@ -52,7 +52,10 @@ class employeeController extends Controller
     {
         return view('signup'); // View name should match your actual view file
     }
-
+    public function showRegForm()
+    {
+        return view('clientreg'); // View name should match your actual view file
+    }
 
     public function clientreg(Request $request) {
         $fields = $request -> validate([

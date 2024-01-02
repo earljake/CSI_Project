@@ -29,3 +29,14 @@ Route::post('/login',[employeeController::class,'login']);
 Route::get('/register', [employeeController::class, 'showRegistrationForm'])->name('register');
 
 Route::post('/clientreg',[employeeController::class,'clientreg']);
+<<<<<<< Updated upstream
+=======
+
+Route::get('/',[ShowController::class,'show']);
+
+// routes/web.php
+
+Route::get('/clientreg', [employeeController::class, 'showRegForm'])->name('clientreg');
+
+
+>>>>>>> Stashed changes
