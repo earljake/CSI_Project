@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\employeeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ShowController;
+use App\Http\Controllers\employeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +30,8 @@ Route::post('/login',[employeeController::class,'login']);
 Route::get('/register', [employeeController::class, 'showRegistrationForm'])->name('register');
 
 Route::post('/clientreg',[employeeController::class,'clientreg']);
-<<<<<<< Updated upstream
-=======
+
+
 
 Route::get('/',[ShowController::class,'show']);
 
@@ -39,4 +40,3 @@ Route::get('/',[ShowController::class,'show']);
 Route::get('/clientreg', [employeeController::class, 'showRegForm'])->name('clientreg');
 
 
->>>>>>> Stashed changes

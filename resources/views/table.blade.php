@@ -8,132 +8,46 @@
 </head>
 <body>
     <button class="backbtn">Back</button>
-<div class="wholetbl">   
-    @csrf
-<table class="table">
-<thead>
-<th>CustomerCategory</th>
-<th>Lastname</th>
-<th>Firstname</th>
-<th>Middlename</th>
-<th>Email</th>
-<th>Address</th>
-<th>MobileNumber</th>
-<th>TelephoneNumber</th>
-<th>Companyname</th>
 
-</thead>
-<tbody>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-              
-    </tr>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-             
-    </tr>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-             
-    </tr>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-             
-    </tr>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-          
-    </tr>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-             
-    </tr>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-             
-    </tr>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-              
-    </tr>
-    <tr>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-        <td data-label="Customer">customer</td>
-              
-    </tr>
-</tbody>
-</table>
-</div>   
+    @csrf
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>Customer Category</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Mobile Number</th>
+            <th>Company Name</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach ($data as $data)
+            <tr>
+                <td>
+                @if ($data->category == 1)
+                        Residential
+                    @elseif ($data->category == 2)
+                        Commercial
+                        @elseif ($data->category == 3)
+                        Government
+
+                    @else
+                    @endif
+                    </td>
+                <td>{{ $data->lastname }}</td>
+                <td>{{ $data->firstname }}</td>
+                <td>{{ $data->email }}</td>
+                <td>{{ $data->address }}</td>
+                <td>{{ $data->phone_number }}</td>
+                <td>{{ $data->company_name }}</td>               
+            </tr>
+            @endforeach
+        <tbody>
+    </table>
+</div>
 </body>
 </html>
