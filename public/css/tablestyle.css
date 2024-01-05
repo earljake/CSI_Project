@@ -7,6 +7,7 @@ body{
     font-family: Helvetica;
     -webkit-font-smoothing: antialiased;
     background-image: url('../img/background.jpg');
+    overflow: hidden;
 }
 h2{
     text-align: center;
@@ -17,11 +18,17 @@ h2{
     padding: 30px 0;
 }
 
+
+
 /* Table Styles */
 
 .table-wrapper{
     margin: 10px 70px 70px;
     box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+ 
+    position: relative;
+    top:20%;
+
 }
 
 .fl-table {
@@ -43,7 +50,7 @@ h2{
 
 .fl-table td {
     border-right: 1px solid #f8f8f8;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .fl-table thead th {
@@ -125,4 +132,122 @@ h2{
         display: block;
         text-align: center;
     }
+}
+
+/* Burger Menu */
+
+#menu__toggle {
+    opacity: 0;
+}
+
+#menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+}
+
+.menu__btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+    transition-duration: .25s;
+}
+
+.menu__btn > span::before {
+    content: '';
+    top: -8px;
+}
+
+.menu__btn > span::after {
+    content: '';
+    top: 8px;
+}
+
+.menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #bee5ff;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+}
+
+.menu__list {
+    padding: 0;
+}
+
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+}
+
+.menu__item:hover {
+    background-color: #ffffff;
+}
+
+i {
+    padding-right: 10px;
+}
+
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 0; /* Start with zero width */
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: -1; /* Ensure the overlay is above other elements */
+    transition: width 0.3s ease; /* Smooth transition for width */
+}
+
+.hamburger-menu {
+    position: fixed;
+    z-index: 0; /* Ensure the menu is above the overlay */
+    /* Your existing styles for the hamburger-menu */
+}
+
+.overlay-visible .overlay {
+    display: block;
+    width: 100%; /* Expand the width to 75% when visible */
 }

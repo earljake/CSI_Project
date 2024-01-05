@@ -8,6 +8,9 @@ use App\Models\User;
 use App\Models\Client;
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use Illuminate\Database\QueryException;
+
 
 class employeeController extends Controller
 {
@@ -58,23 +61,78 @@ class employeeController extends Controller
     }
 
     public function clientreg(Request $request) {
-        $fields = $request -> validate([
-            'category' => 'required',
-            'firstname' => 'required',
-            'lastname' => 'required',
-            'company_name' => 'required',
-            'address'=> 'required',
-            'email'=> 'required',
-            'phone_number'=> 'required',
+        try {
+            // Validate the request data...
+            $fields = $request->validate([
+                'category' => 'required',
+                'firstname' => [
+                    'required',
+                    Rule::unique('client')
+                        ->where(function ($query) use ($request) {
+                            return $query->where('category', $request->input('category'))
+                                ->where('lastname', $request->input('lastname'));
+                        }),
+                ],
+                'lastname' => 'required',
+                'company_name' => 'required',
+                'address' => 'required',
+                'email' => 'required|email',
+                'phone_number' => 'required',
+            ], [
+                'firstname.unique' => 'Duplicate entry. This combination already exists.',
+            ]);
 
-            
-        ]);
-    
-        $client = Client::create($fields);
-   
-        return 'goods';  
+            $category = $fields['category'];
+
+            // Set the starting custom_id based on the category
+            $startingCustomId = 1;
+
+            // Define different starting values for each category
+            switch ($category) {
+                case 1: // Residential
+                    $startingCustomId = 1;
+                    break;
+                case 2: // Commercial
+                    $startingCustomId = 20001;
+                    break;
+                case 3: // Government
+                    $startingCustomId = 30001;
+                    break;
+                // Add more cases for other categories as needed
+            }
+
+            // Get the last custom_id for the selected category
+            $lastCustomId = Client::where('category', $category)->max('custom_id') ?? $startingCustomId - 1;
+
+            // Increment the last custom_id based on the category
+            $customId = $lastCustomId + 1;
+
+            // Create the new client record
+            $client = new Client();
+            $client->category = $category;
+            $client->custom_id = $customId;
+            $client->firstname = $fields['firstname'];
+            $client->lastname = $fields['lastname'];
+            $client->company_name = $fields['company_name'];
+            $client->address = $fields['address'];
+            $client->email = $fields['email'];
+            $client->phone_number = $fields['phone_number'];
+
+            $client->save();
+
+            return view('clientreg')->with('errorMessage', 'Client registered successfully.');
+        } catch (QueryException $e) {
+            if ($e->getCode() == '23000') {
+                // Set an error message to be displayed in the view
+                $errorMessage = 'Duplicate entry. This combination already exists.';
+            } else {
+                // Handle other exceptions or rethrow the exception if needed
+                throw $e;
+            }
+
+            // Pass the error message to the view
+            return view('clientreg', compact('errorMessage'));
+        }
     }
-    
+
 }
-
-
