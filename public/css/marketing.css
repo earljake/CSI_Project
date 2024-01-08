@@ -1,0 +1,157 @@
+body{
+    background: none;
+    margin: 0;
+}
+
+.admin{
+    display: flex;
+    height: 10%;
+    justify-content: flex-end;
+    padding-right: 20px;
+    align-items: center;
+}
+
+
+.header{
+    display: flex;
+}
+
+.navbar{
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+#admin{
+    border-radius: 50px;
+    width: 5%;
+}
+
+.wrapper{
+    display: grid;
+    height: 85%;
+}
+
+.burger{
+    width: 20%;
+}
+
+#burger{
+    width: 50%;
+}
+
+.container{
+    display: flex;
+    height: 100%;
+}
+
+.box{
+    background-color: #F4F2F2;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    padding: 25px 25px 0px 25px;
+}
+
+.regclient{
+    border-bottom: 1px solid black;
+    font-family: sans-serif;
+    font-size: x-large;
+    height: 8%;
+    padding: 10px 0px 0px 10px;
+}
+
+.regbox{
+    background-color: #fff;
+    height: 60%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));;
+}
+
+.input1{
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    align-items: center;
+    font-size: 100%;
+    margin: 2%;
+    height: 110%;
+}
+
+.input2{
+    display: grid;
+    align-items: center;
+    font-size: 100%;
+    margin: 2%;
+    width: 50%;
+    height: 107%;
+}
+.input3{
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    align-items: center;
+    font-size: 100%;
+    height: 75%;
+}
+
+.input4{
+    display: grid;
+    align-items: center;
+    font-size: 100%;
+    height: 75%;
+    width: 50%;
+}
+
+
+#custcat{
+    font-size: 100%;
+    width: 100%;
+    height: 50%;
+}
+
+#btn{
+    background-color: #F29F22;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    width: 8%;
+    height: 35%;
+    margin: 3% 1%;
+    font-size: large;
+}
+
+.btn{
+    display: grid;
+    padding: 0px 0px 0px 35px;
+}
+
+#select{
+    border: none;
+}
+
+.box1{
+    display: flex;
+    padding: 0px 0px 0px 35px;
+}
+
+.left{
+    width: 50%;
+    display: flex;
+    gap: 10%;
+}
+
+
+.right{
+    width: 50%;
+    display: flex;
+    gap: 10%;
+    align-items: flex-end;
+}
+
+#last{
+    height: 50%;
+}
+
+#box{
+    height: 50%;
+}

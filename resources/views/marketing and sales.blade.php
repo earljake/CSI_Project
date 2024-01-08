@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="{{ asset('css/regclient.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/marketing.css') }}">
 </head>
 <body>
     <div class="admin">
@@ -16,34 +16,38 @@
         <div class="container">
             <div class="box">
                 <div class="regbox">
-                    <div class="regclient">Registration Of Client</div>
+                    <div class="regclient">Marketing And Sales</div>
                     <div class="box1">
                 <div class="left">
                     <div class="input1">
                     <p>Customer Category</p>
-                    <p>Last Name</p>
-                    <p>First Name</p>
-                    <p>Middle Name</p>
+                    <p>Sales Person</p>
+                    <p>Project Category</p>
+                    <p>Reference</p>
                 </div>
                     <div class="input2">
-                        <select name="" id="custcat">
+                        <select name="customercategory" id="custcat">
                             <option value=""></option>
                           </select>
-                        <input type="text" name="lastname" id="last">
-                        <input type="text" name="firstname" id="last">
-                        <input type="text" name="middlename" id="last">
+                          <select name="salesperson" id="custcat">
+                            <option value=""></option>
+                          </select>
+                          <select name="projectcategory" id="custcat">
+                            <option value=""></option>
+                          </select>
+                          <input type="text" name="reference" id="custcat">
                     </div>
                 </div>
                     <div class="right">
                     <div class="input3">
-                        <p>Company Name</p>
-                        <p>Email</p>
-                        <p>Phone Number</p>
+                        <p>Project Description</p>
+                        <p>Lead Date</p>
+                        <p>Engage Date</p>
                     </div>
                     <div class="input4">
-                    <input type="text" name="companyname" id="num">
-                    <input type="Email" name="email" id="num">
-                    <input type="Number" name="number" id="num">
+                    <input type="text" name="projectdescription" id="box">
+                    <input type="date" name="leaddate" id="box">
+                    <input type="date" name="engagedate" id="box">
                     </div>
                     </div>
                     </div>
