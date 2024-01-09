@@ -15,8 +15,8 @@
     <div class="wrapper">
         <div class="container">
             <div class="box">
-                <div class="regbox">
-                    <div class="regclient">Marketing And Sales</div>
+                <div class="marketbox">
+                    <div class="market">Marketing And Sales</div>
                     <div class="box1">
                 <div class="left">
                     <div class="input1">
@@ -26,16 +26,16 @@
                     <p>Reference</p>
                 </div>
                     <div class="input2">
-                        <select name="customercategory" id="custcat">
-                            <option value=""></option>
-                          </select>
-                          <select name="salesperson" id="custcat">
-                            <option value=""></option>
-                          </select>
-                          <select name="projectcategory" id="custcat">
-                            <option value=""></option>
-                          </select>
-                          <input type="text" name="reference" id="custcat">
+                    <select name="customercategory" id="custcat">
+                        <option value=""></option>
+                        </select>
+                    <select name="salesperson" id="custcat">
+                        <option value=""></option>
+                        </select>
+                    <select name="projectcategory" id="custcat">
+                        <option value=""></option>
+                         </select>
+                    <input type="text" name="reference" id="custcat">
                     </div>
                 </div>
                     <div class="right">
@@ -45,9 +45,9 @@
                         <p>Engage Date</p>
                     </div>
                     <div class="input4">
-                    <input type="text" name="projectdescription" id="box">
-                    <input type="date" name="leaddate" id="box">
-                    <input type="date" name="engagedate" id="box">
+                     <input type="text" name="projectdescription" id="box">
+                     <input type="date" name="leaddate" id="box">
+                     <input type="date" name="engagedate" id="box">
                     </div>
                     </div>
                     </div>
