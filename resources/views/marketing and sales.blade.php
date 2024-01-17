@@ -26,16 +26,16 @@
                     <p>Reference</p>
                 </div>
                     <div class="input2">
-                    <select name="customercategory" id="custcat">
+                    <select name="customercategory" id="box">
                         <option value=""></option>
                         </select>
-                    <select name="salesperson" id="custcat">
+                    <select name="salesperson" id="box">
                         <option value=""></option>
                         </select>
-                    <select name="projectcategory" id="custcat">
+                    <select name="projectcategory" id="box">
                         <option value=""></option>
                          </select>
-                    <input type="text" name="reference" id="custcat">
+                    <input type="text" name="reference" id="box">
                     </div>
                 </div>
                     <div class="right">
@@ -51,7 +51,8 @@
                     </div>
                     </div>
                     </div>
-                    <div class="btn"><button id="btn">Submit</button></div>
+                    <div class="btn">
+                        <input type="submit" value="Register">
                 </div>              
             </div>
         </div>

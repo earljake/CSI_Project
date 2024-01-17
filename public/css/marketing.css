@@ -16,14 +16,6 @@ body{
     display: flex;
 }
 
-.navbar{
-    font-size: 18px;
-    color: #fff;
-    font-weight: 500;
-    text-decoration: none;
-    margin-left: 10px;
-}
-
 #admin{
     border-radius: 50px;
     width: 5%;
@@ -32,14 +24,6 @@ body{
 .wrapper{
     display: grid;
     height: 85%;
-}
-
-.burger{
-    width: 20%;
-}
-
-#burger{
-    width: 50%;
 }
 
 .container{
@@ -68,6 +52,11 @@ body{
     height: 60%;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));;
     margin-left: 6%;
+    width: 95%;
+}
+
+.marketbox:nth-child(2n){
+    justify-content: end;
 }
 
 .input1{
@@ -104,21 +93,16 @@ body{
 }
 
 
-#custcat{
-    font-size: 100%;
-    width: 100%;
-    height: 50%;
-}
-
-#btn{
+.btn input{
     background-color: #F29F22;
     border: none;
     border-radius: 2px;
     color: #fff;
-    width: 8%;
+    width: 10%;
     height: 35%;
     margin: 3% 1%;
     font-size: large;
+    cursor: pointer;
 }
 
 .btn{
@@ -155,4 +139,554 @@ body{
 
 #box{
     height: 50%;
+}
+
+/* 950 */
+
+
+@media(max-width: 950px){
+    .marketbox{
+        max-width: 400px;
+    }
+
+    .box1{
+        margin-top: 20px;
+    }
+
+    .admin{
+        display: flex;
+        height: 10%;
+        justify-content: flex-end;
+        padding-right: 15px;
+        align-items: center;
+    }
+
+    .input1{
+        font-family: 'Poppins', sans-serif;
+        display: grid;
+        align-items: center;
+        font-size: 100%;
+        margin: 0;
+        height: 110%;
+    }
+
+    .input2 {
+        display: grid;
+        align-items: center;
+        font-size: 100%;
+        margin: 0;
+        width: 50%;
+        height: 100%;
+    }
+
+    .left{
+       width: 50%;
+       margin: 0;
+    }
+    .right{
+        width: 50%;
+        margin: 0;
+    }
+
+    .left, .right{
+        gap: 1%;
+    }
+
+    .marketbox{
+        max-width: 800px;
+        height: 100%;
+    }
+    
+
+    .market{
+        border-bottom: 1px solid black;
+        font-family: sans-serif;
+        font-size: x-large;
+        height: 6%;
+        padding: 7px 0px 0px 10px;
+    }
+
+    .marketbox:nth-child(2n)::-webkit-scrollbar{
+        width: 0%;
+    }
+    .btn input{
+        background-color: #F29F22;
+        border: none;
+        border-radius: 2px;
+        color: #fff;
+        width: 12%;
+        height: 50%;
+        margin: 3% 1%;
+        font-size: large;
+        cursor: pointer;
+    }
+
+    .box {
+        background-color: #F4F2F2;
+        display: grid;
+        width: 100%;
+        height: 100%;
+        padding: 25px 40px 0px 25px;
+    }
+}
+
+
+/* 800 media quary */
+
+@media(max-width: 800px){
+    .marketbox{
+        max-width: 400px;
+    }
+
+    .left{
+       width: 50%;
+    }
+    .right{
+        width: 50%;
+        margin: 0;
+    }
+
+    .left, .right{
+        gap: 1px;
+    }
+
+    .input1{
+        font-family: 'Poppins', sans-serif;
+        display: grid;
+        align-items: center;
+        font-size: 76%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .input3{
+        font-family: 'Poppins', sans-serif;
+        display: grid;
+        align-items: center;
+        font-size: 79%;
+        height: 86%;
+    }
+
+    .box {
+        background-color: #F4F2F2;
+        display: grid;
+        width: 100%;
+        height: 100%;
+        padding: 25px 75px 0px 0px;
+    }
+
+    .box1{
+        margin-top: 80px;
+    }
+   
+    .market{
+        border-bottom: 1px solid black;
+        font-family: sans-serif;
+        font-size: xx-large;
+        height: 7%;
+        padding: 12px 0px 0px 9px;
+    }
+
+    .marketbox{
+        max-width: 800px;
+        height: 100%;
+        width: 102%;
+    }
+
+    .marketbox:nth-child(2n)::-webkit-scrollbar{
+        width: 0%;
+    }
+
+    .btn input{
+        background-color: #F29F22;
+        border: none;
+        border-radius: 2px;
+        color: #fff;
+        width: 15%;
+        height: 50%;
+        margin: 3% 1%;
+        font-size: large;
+        cursor: pointer;
+    }
+}
+
+/* 700 media quary */
+
+@media(max-width: 700px){
+    .marketbox{
+        max-width: 400px;
+    }
+
+    .input3 {
+        font-family: 'Poppins', sans-serif;
+        display: grid;
+        align-items: center;
+        font-size: 70%;
+        height: 85%;
+        width: 17%;
+    }    
+
+    .left{
+       width: 50%;
+    }
+    .right{
+        place-content: space-evenly;
+    }
+
+    .left, .right{
+        width: auto;
+    }
+
+
+    .marketbox{
+        max-width: 800px;
+        height: 100%;
+    }
+
+    .market{
+        border-bottom: 1px solid black;
+        font-family: sans-serif;
+        font-size: xx-large;
+        height: 9%;
+        display: flex;
+        align-items: self-end;
+        padding: 0px 0px 0px 7px;
+    }
+
+    .marketbox:nth-child(2n)::-webkit-scrollbar{
+        width: 0%;
+    }
+    .box1{
+       margin-top: 80px;
+    }
+    .btn input{
+        background-color: #F29F22;
+        border: none;
+        border-radius: 2px;
+        color: #fff;
+        width: 15%;
+        height: 52%;
+        margin: 3% 1%;
+        font-size: large;
+        cursor: pointer;
+    }
+}
+
+
+
+/* 600 media quary  */
+
+@media(max-width: 600px){
+    .marketbox{
+        max-width: 400px;
+    }
+
+    .left{
+       width: 50%;
+    }
+    .right{
+        width: 50%;
+    }
+
+    .left, .right{
+        gap: 1%;
+    }
+
+    .marketbox{
+        max-width: 800px;
+        height: 100%;
+    }
+
+    .market{
+        border-bottom: 1px solid black;
+        font-family: sans-serif;
+        font-size: x-large;
+        height: 4%;
+        padding: 7px 0px 0px 3px;
+    }
+
+    .marketbox:nth-child(2n)::-webkit-scrollbar{
+        width: 0%;
+    }
+    .box1{
+        max-width: 800;
+        display: inline-flex;
+    }
+    .btn input{
+        background-color: #F29F22;
+        border: none;
+        border-radius: 2px;
+        color: #fff;
+        width: 20%;
+        height: 60%;
+        margin: 3% 1%;
+        font-size: large;
+        cursor: pointer;
+    }
+}
+
+
+
+/* 660 media quary  */
+
+@media(max-width: 660px){
+    .marketbox{
+        max-width: 250px;
+    }
+
+    .left{
+       width: 50%;
+    }
+    .right{
+        width: 50%;
+    }
+
+    .left, .right{
+        gap: 11%;
+    }
+
+    .marketbox{
+        max-width: 800px;
+        height: 100%;
+        width: 101%;
+    }
+
+    .marketbox:nth-child(2n)::-webkit-scrollbar{
+        width: 0%;
+    }
+    .box1{
+        max-width: 800;
+        display: grid;
+        justify-content: center;
+    }
+    
+    .input3 {
+        font-family: 'Poppins', sans-serif;
+        display: grid;
+        align-items: center;
+        font-size: 70%;
+        height: 85%;
+        width: 50%;
+    }
+
+    .input4 {
+        display: grid;
+        align-items: center;
+        font-size: 100%;
+        height: 100%;
+        width: 50%;
+    }
+
+    .btn {
+        display: grid;
+        padding: 18px 0px 0px 43px;
+        justify-content: center;
+    }
+
+    .btn input{
+        background-color: #F29F22;
+        border: none;
+        border-radius: 2px;
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        margin: 3% 1%;
+        font-size: large;
+        cursor: pointer;
+    }
+
+    .admin {
+        display: flex;
+        height: 10%;
+        justify-content: flex-end;
+        padding-right: 20px;
+        align-items: center;
+        
+        }
+    
+        .market{
+            border-bottom: 1px solid black;
+            font-family: sans-serif;
+            font-size: xx-large;
+            height: 7%;
+            padding: 7px 0px 0px 10px;
+        }
+}
+
+
+
+    /* 550 media quary  */
+
+    @media(max-width: 550px){
+    .marketbox{
+        max-width: 400px;
+    }
+
+    .admin{
+        display: flex;
+        height: 10%;
+        justify-content: flex-end;
+        padding-right: 20px;
+        align-items: center;
+    }
+     
+    .btn {
+        display: grid;
+        padding: 18px 0px 0px 35px;
+        justify-content: center;
+    }
+
+    .left{
+        width: 50%;
+     }
+     .right{
+         width: 40%;
+         margin: 0;
+     }
+ 
+ 
+     .input1{
+         font-family: 'Poppins', sans-serif;
+         display: grid;
+         align-items: center;
+         font-size: 76%;
+         height: 100%;
+         margin: 0;
+     }
+ 
+     .input3{
+         font-family: 'Poppins', sans-serif;
+         display: grid;
+        justify-content: center;
+         font-size: 79%;
+         height: 86%;
+     }
+
+     .input4 {
+        display: grid;
+        align-items: center;
+        font-size: 100%;
+        height: 100%;
+        width: 34%;
+    }
+ 
+     .box {
+         background-color: #F4F2F2;
+         display: grid;
+         width: 100%;
+         height: 100%;
+         padding: 25px 75px 0px 0px;
+     }
+ 
+     .box1{
+         margin-top: 60px;
+         display: grid;
+         justify-content: center;
+     }
+    
+     .market{
+         border-bottom: 1px solid black;
+         font-family: sans-serif;
+         font-size: xx-large;
+         height: 7%;
+         padding: 12px 0px 0px 9px;
+     }
+ 
+     .marketbox{
+         max-width: 800px;
+         height: 100%;
+         width: 102%;
+     }
+ 
+     .marketbox:nth-child(2n)::-webkit-scrollbar{
+         width: 0%;
+     }
+ 
+     .btn input{
+         background-color: #F29F22;
+         border: none;
+         border-radius: 2px;
+         color: #fff;
+         width: 100%;
+         height: 100%;
+         margin: 5% 2%;
+         font-size: large;
+         cursor: pointer;
+     }
+
+}
+/* 376 media */
+
+@media(max-width: 376px){
+    .marketbox{
+        max-width: 250px;
+    }
+
+    .left{
+       width: 50%;
+    }
+    .right{
+        width: 50%;
+    }
+
+    .left, .right{
+        gap: 4%;
+    }
+
+    .marketbox{
+        max-width: 800px;
+        height: 100%;
+        width: 112%;
+    }
+
+    .input4 {
+        display: grid;
+        align-items: center;
+        font-size: 100%;
+        height: 100%;
+        width: 50%;
+    }
+
+    .marketbox:nth-child(2n)::-webkit-scrollbar{
+        width: 0%;
+    }
+    .box1{
+        max-width: 800;
+        display: grid;
+    }
+
+    .btn {
+        display: grid;
+        padding: 20px 0px 0px 35px;
+        justify-content: center;
+    }
+
+    .btn input{
+        background-color: #F29F22;
+        border: none;
+        border-radius: 2px;
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        margin: 3% 1%;
+        font-size: large;
+        cursor: pointer;
+    }
+
+    .admin {
+        display: flex;
+        height: 10%;
+        justify-content: flex-end;
+        padding-right: 20px;
+        align-items: center;
+        
+        }
+    
+        .market{
+            border-bottom: 1px solid black;
+            font-family: sans-serif;
+            font-size: x-large;
+            height: 5%;
+            padding: 13px 0px 0px 10px;
+        }
 }
