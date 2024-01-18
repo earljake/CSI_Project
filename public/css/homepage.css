@@ -1,0 +1,300 @@
+body{
+    background: #fff;
+    margin: none;
+    padding: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.left{
+    width: 20%;
+    background: #fff;
+    border-right: 1px solid black;
+}
+
+#logo{
+    width: 90%;
+    height: 15%;
+}
+
+.right{
+    width: 80%;
+    background: url(back.jpg);
+    background-size: cover;
+}
+
+.csilogo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.undraw{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#csilogo{
+    height: 50%;
+    width: 55%;
+}
+
+#undraw{
+    height: 50%;
+    width: 60%;
+    margin-left: 9%;
+}
+
+ /* sidebar */
+ *{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.sidebar{
+    position: fixed;
+    
+    width: 270px;
+    height: 100%;
+   
+    transition: all .5s ease;
+}
+.sidebar header{
+    font-size: 21px;
+    color: white;
+    text-align: justify;
+    line-height: 70px;
+    background: #063146;
+    user-select: none;
+}
+.sidebar ul a{
+    display: block;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: black;
+    padding-left: 30px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255,255,255,.1);
+   
+    transition: .4s;
+} 
+ul li:hover a{
+    padding-left: 50px;
+}
+
+#leftlogo{
+    width: 90%;
+    height: 13%;
+}
+
+@media(max-width: 1030px){
+
+    .left{
+        width: 25%;
+    }
+    .sidebar {
+        position: fixed;
+        margin-top: 10px;
+        width: 23%;
+        height: 100%;
+    }
+    ul li:hover a{
+        padding-left: 40px;
+    }
+    .sidebar ul a{
+        display: block;
+        line-height: 80px;
+        font-size: 17px;
+        padding-left: 25px;
+    }
+    ul{
+        height: 100%;
+    }
+    
+    
+    .right{
+        display: grid;
+    }
+    .csilogo{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    #csilogo{
+        height: 60%;
+        width: 55%;
+    }
+    
+    .undraw{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        
+    }
+    #undraw{
+        height: 70%;
+        width: 60%;
+        margin-left: 9%;
+    }
+
+}
+
+
+
+@media(max-width: 770px){
+    .left{
+        width: 30%;
+    }
+    .sidebar {
+        position: fixed;
+        margin-top: 10px;
+        width: 30%;
+        height: 100%;
+    }
+    .sidebar ul a{
+        line-height: 70px;
+        font-size: 15px;
+        padding-left: 15px;
+    }
+    ul li:hover a{
+        padding-left: 40px;
+    }
+    ul{
+        height: 100%;
+    }
+    
+    
+    .right{
+        display: grid;
+    }
+    .csilogo{
+        height: 100%;
+    }
+    #csilogo{
+        height: 90%;
+        width: 80%;
+    }
+    
+    .undraw{
+        height: 100%;
+        
+    }
+    #undraw{
+        height: 90%;
+        width: 80%;
+    }
+
+}
+
+
+
+
+@media(max-width: 430px){
+    .left{
+        width: 35%;
+    }
+    .sidebar {
+        position: fixed;
+        margin-top: 10px;
+        width: 30%;
+        height: 100%;
+    }
+    .sidebar ul a{
+        font-size: 70%;
+        padding-left: 10px;
+    }
+    ul{
+        height: 100%;
+    }
+    
+    
+    .right{
+        display: grid;
+    }
+    .csilogo{
+        height: 100%;
+        display: flex;
+        align-items: end;
+    }
+    #csilogo{
+        height: 50%;
+        width: 70%;
+    }
+    
+    .undraw{
+        height: 100%;
+        
+    }
+    #undraw{
+        height: 55%;
+        width: 75%;
+    }
+
+}
+
+
+
+@media(max-width: 380px){
+    .left{
+        width: 30%;
+    }
+    .sidebar {
+        position: fixed;
+        margin-top: 10px;
+        width: 30%;
+        height: 100%;
+    }
+    .sidebar ul a{
+        font-size: 50%;
+        padding-left: 10px;
+        line-height: 50px;
+    }
+    ul{
+        height: 100%;
+    }
+    
+    
+    .right{
+        display: grid;
+    }
+    .csilogo{
+        height: 100%;
+        display: flex;
+        align-items: end;
+    }
+    #csilogo{
+        height: 40%;
+        width: 70%;
+    }
+    
+    .undraw{
+        height: 100%;
+        
+    }
+    #undraw{
+        height: 50%;
+        width: 75%;
+    }
+
+}
+
+
+
