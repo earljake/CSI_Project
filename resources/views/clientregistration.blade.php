@@ -27,7 +27,7 @@
                     <p>Customer Category</p>
                     <p>Last Name</p>
                     <p>First Name</p>
-                    <p>Middle Name</p>
+                    <p>Address</p>
                 </div>
                     <div class="input2">
                         <select name="category" id="custcat">
@@ -38,7 +38,7 @@
                           </select>
                         <input type="text" name="lastname" id="last">
                         <input type="text" name="firstname" id="last">
-                        <input type="text" name="middlename" id="last">
+                        <input type="text" name="address" id="last">
                     </div>
                 </div>
                     <div class="right">
@@ -48,42 +48,59 @@
                         <p>Phone Number</p>
                     </div>
                     <div class="input4">
-                    <input type="text" name="companyname" id="num">
+                    <input type="text" name="company_name" id="num">
                     <input type="Email" name="email" id="num">
-                    <input type="Number" name="number" id="num">
+                    <input type="text" name="phone_number" id="num">
                     </div>
                     </div>
                     </div>
-                    <div class="btn"><button id="btn">Submit</button></div>
+                    <div class="btn"><button id="btn">Register</button></div>
                 </div>          
-                </form>    
+                </form>   
+                @isset($errorMessage)
+            <div class="error-message">
+                {{ $errorMessage }}
+            </div>
+
+            <script>
+                // Hide the error message after 10 seconds
+                setTimeout(function() {
+                    document.getElementById('error-message').style.display = 'none';
+                }, 10000); // 10000 milliseconds = 10 seconds
+            </script>
+        @endisset 
             </div>
         </div>
         <div class="hamburger-menu">
-            <input id="menu__toggle" type="checkbox" />
-            <label class="menu__btn" for="menu__toggle">
-                <span></span>
-            </label>
-    
-            <div class="menu__box">
-            
-                <ul class="menu__list"><img src="/img/logo.png" class="logo_box">
-                    <li><a class="menu__item" href="{{ route('home') }}"><i class="fa fa-home fa-1x" aria-hidden="true"></i>Home</a></li>
-                    <li><a class="menu__item" href="{{ route('clientregistration') }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Registration
-                        of Client</a></li>
-                    <li><a class="menu__item" href="{{ route('table') }}"><i class="fa-solid fa-table-list"></i>Client Masterlist</a></li>
-                    <li><a class="menu__item" href="{{ route('marketing') }}"><i class="fa-solid fa-chart-simple"></i>Marketing and Sales</a></li>
-                    <li><a class="menu__item" href="{{ route('marketing') }}"><i class="fa-solid fa-gear"></i>Engineering</a></li>
-                </ul>
+                <input id="menu__toggle" type="checkbox" />
+                <label class="menu__btn" for="menu__toggle">
+                    <span></span>
+                </label>
+
+                <div class="menu__box">
+
+                    <ul class="menu__list"><img src="/img/logo.png" class="logo_box">
+                        <li><a class="menu__item" href="{{ route('home') }}"><i class="fa fa-home fa-1x"
+                                    aria-hidden="true"></i>Home</a></li>
+                        <li><a class="menu__item" href="{{ route('clientregistration') }}"><i
+                                    class="fa fa-pencil-square-o" aria-hidden="true"></i>Registration
+                                of Client</a></li>
+                        <li><a class="menu__item" href="{{ route('table') }}"><i class="fa-solid fa-table-list"></i>Client
+                                Masterlist</a></li>
+                        <li><a class="menu__item" href="{{ route('marketing') }}"><i
+                                    class="fa-solid fa-chart-simple"></i>Marketing and Sales</a></li>
+                        <li><a class="menu__item" href="{{ route('marketing') }}"><i
+                                    class="fa-solid fa-gear"></i>Engineering</a></li>
+                    </ul>
+                </div>
+                <div class="overlay"></div>
+
+                <script>
+                    document.getElementById('menu__toggle').addEventListener('change', function () {
+                        document.body.classList.toggle('overlay-visible', this.checked);
+                    });
+                </script>
             </div>
-            <div class="overlay"></div>
-    
-            <script>
-                document.getElementById('menu__toggle').addEventListener('change', function () {
-                    document.body.classList.toggle('overlay-visible', this.checked);
-                });
-            </script>
-        </div>
     </div>
     
 </body>

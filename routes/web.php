@@ -41,11 +41,8 @@ Route::get('/table',[ShowController::class,'show']);
 Route::get('/clientreg', [employeeController::class, 'showRegForm'])->name('clientreg');
 
 
-Route::get('/clientregistration', function () {
-    return view('clientregistration');
-});
 Route::get('/clientregistration', [employeeController::class, 'showClientRegistrationForm'])->name('clientregistration');
-
+Route::post('/clientregistration', [employeeController::class, 'clientregistration']);
 
 Route::get('/landing', [employeeController::class, 'showLanding'])->name('landing');
 Route::get('/marketing', [employeeController::class, 'showMarketing'])->name('marketing');

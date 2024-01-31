@@ -112,7 +112,7 @@ class employeeController extends Controller
             // Define different starting values for each category
             switch ($category) {
                 case 1: // Residential
-                    $startingCustomId = 1;
+                    $startingCustomId = 10001;
                     break;
                 case 2: // Commercial
                     $startingCustomId = 20001;
@@ -141,8 +141,8 @@ class employeeController extends Controller
             $client->phone_number = $fields['phone_number'];
 
             $client->save();
-
-            return view('clientreg')->with('errorMessage', 'Client registered successfully.');
+            return 'goods na';
+            //return view('clientregistration')->with('errorMessage', 'Client registered successfully.');
         } catch (QueryException $e) {
             if ($e->getCode() == '23000') {
                 // Set an error message to be displayed in the view

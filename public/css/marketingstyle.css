@@ -1,13 +1,13 @@
-body{
+body {
     background: none;
     margin: 0;
 }
 
-.box{ 
+.box {
     color: black;
 }
 
-.admin{
+.admin {
     display: flex;
     height: 10%;
     justify-content: flex-end;
@@ -15,35 +15,30 @@ body{
     align-items: center;
 }
 
-
-.header{
+.header {
     display: flex;
 }
 
-#admin{
+#admin {
     border-radius: 50px;
     width: 5%;
 }
 
-.wrapper{
-    display: grid;
-    height: 85%;
-}
-
-.container{
+.container {
     display: flex;
     height: 100%;
+    padding: 100px 20px 20px 20px;
 }
 
-.box{
-    background-color: #F4F2F2;
+.box {
+    background-color: #f4f2f2;
     display: grid;
     width: 100%;
     height: 100%;
-    padding: 25px 85px 0px 0px;
+    padding: 25px 85px 100px 0px;
 }
 
-.market{
+.market {
     border-bottom: 1px solid black;
     font-family: sans-serif;
     font-size: x-large;
@@ -51,20 +46,19 @@ body{
     padding: 10px 0px 0px 10px;
 }
 
-.marketbox{
+.marketbox {
     background-color: #fff;
-    height: 70%;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     margin-left: 6%;
     width: 95%;
 }
 
-.marketbox:nth-child(2n){
+.marketbox:nth-child(2n) {
     justify-content: end;
 }
 
-.input1{
-    font-family: 'Poppins', sans-serif;
+.input1 {
+    font-family: "Poppins", sans-serif;
     display: grid;
     align-items: center;
     font-size: 100%;
@@ -72,7 +66,7 @@ body{
     height: 110%;
 }
 
-.input2{
+.input2 {
     display: grid;
     align-items: center;
     font-size: 100%;
@@ -80,15 +74,15 @@ body{
     width: 50%;
     height: 107%;
 }
-.input3{
-    font-family: 'Poppins', sans-serif;
+.input3 {
+    font-family: "Poppins", sans-serif;
     display: grid;
     align-items: center;
     font-size: 100%;
     height: 86%;
 }
 
-.input4{
+.input4 {
     display: grid;
     align-items: center;
     font-size: 100%;
@@ -96,9 +90,8 @@ body{
     width: 50%;
 }
 
-
-.btn input{
-    background-color: #F29F22;
+.btn input {
+    background-color: #f29f22;
     border: none;
     border-radius: 2px;
     color: #fff;
@@ -110,55 +103,53 @@ body{
     margin-top: 70px;
 }
 
-.btn{
+.btn {
     display: grid;
     padding: 0px 0px 0px 35px;
 }
 
-#select{
+#select {
     border: none;
 }
 
-.box1{
+.box1 {
     display: flex;
     padding: 0px 0px 0px 35px;
 }
 
-.left{
+.left {
     width: 50%;
     display: flex;
     gap: 10%;
 }
 
-
-.right{
+.right {
     width: 50%;
     display: flex;
     gap: 10%;
     margin-top: 13px;
 }
 
-#last{
+#last {
     height: 50%;
 }
 
-#box{
+#box {
     height: 50%;
 }
 
 /* 950 */
 
-
-@media(max-width: 950px){
-    .marketbox{
+@media (max-width: 950px) {
+    .marketbox {
         max-width: 400px;
     }
 
-    .box1{
+    .box1 {
         margin-top: 20px;
     }
 
-    .admin{
+    .admin {
         display: flex;
         height: 10%;
         justify-content: flex-end;
@@ -166,8 +157,8 @@ body{
         align-items: center;
     }
 
-    .input1{
-        font-family: 'Poppins', sans-serif;
+    .input1 {
+        font-family: "Poppins", sans-serif;
         display: grid;
         align-items: center;
         font-size: 100%;
@@ -184,26 +175,26 @@ body{
         height: 100%;
     }
 
-    .left{
-       width: 50%;
-       margin: 0;
+    .left {
+        width: 50%;
+        margin: 0;
     }
-    .right{
+    .right {
         width: 50%;
         margin: 0;
     }
 
-    .left, .right{
+    .left,
+    .right {
         gap: 1%;
     }
 
-    .marketbox{
+    .marketbox {
         max-width: 800px;
         height: 100%;
     }
-    
 
-    .market{
+    .market {
         border-bottom: 1px solid black;
         font-family: sans-serif;
         font-size: x-large;
@@ -211,11 +202,11 @@ body{
         padding: 7px 0px 0px 10px;
     }
 
-    .marketbox:nth-child(2n)::-webkit-scrollbar{
+    .marketbox:nth-child(2n)::-webkit-scrollbar {
         width: 0%;
     }
-    .btn input{
-        background-color: #F29F22;
+    .btn input {
+        background-color: #f29f22;
         border: none;
         border-radius: 2px;
         color: #fff;
@@ -227,7 +218,7 @@ body{
     }
 
     .box {
-        background-color: #F4F2F2;
+        background-color: #f4f2f2;
         display: grid;
         width: 100%;
         height: 100%;
@@ -235,28 +226,28 @@ body{
     }
 }
 
-
 /* 800 media quary */
 
-@media(max-width: 800px){
-    .marketbox{
+@media (max-width: 800px) {
+    .marketbox {
         max-width: 400px;
     }
 
-    .left{
-       width: 50%;
+    .left {
+        width: 50%;
     }
-    .right{
+    .right {
         width: 50%;
         margin: 0;
     }
 
-    .left, .right{
+    .left,
+    .right {
         gap: 1px;
     }
 
-    .input1{
-        font-family: 'Poppins', sans-serif;
+    .input1 {
+        font-family: "Poppins", sans-serif;
         display: grid;
         align-items: center;
         font-size: 76%;
@@ -264,8 +255,8 @@ body{
         margin: 0;
     }
 
-    .input3{
-        font-family: 'Poppins', sans-serif;
+    .input3 {
+        font-family: "Poppins", sans-serif;
         display: grid;
         align-items: center;
         font-size: 79%;
@@ -273,18 +264,18 @@ body{
     }
 
     .box {
-        background-color: #F4F2F2;
+        background-color: #f4f2f2;
         display: grid;
         width: 100%;
         height: 100%;
         padding: 25px 75px 0px 0px;
     }
 
-    .box1{
+    .box1 {
         margin-top: 80px;
     }
-   
-    .market{
+
+    .market {
         border-bottom: 1px solid black;
         font-family: sans-serif;
         font-size: xx-large;
@@ -292,18 +283,18 @@ body{
         padding: 12px 0px 0px 9px;
     }
 
-    .marketbox{
+    .marketbox {
         max-width: 800px;
         height: 100%;
         width: 102%;
     }
 
-    .marketbox:nth-child(2n)::-webkit-scrollbar{
+    .marketbox:nth-child(2n)::-webkit-scrollbar {
         width: 0%;
     }
 
-    .btn input{
-        background-color: #F29F22;
+    .btn input {
+        background-color: #f29f22;
         border: none;
         border-radius: 2px;
         color: #fff;
@@ -317,38 +308,38 @@ body{
 
 /* 700 media quary */
 
-@media(max-width: 700px){
-    .marketbox{
+@media (max-width: 700px) {
+    .marketbox {
         max-width: 400px;
     }
 
     .input3 {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         display: grid;
         align-items: center;
         font-size: 70%;
         height: 85%;
         width: 17%;
-    }    
-
-    .left{
-       width: 50%;
     }
-    .right{
+
+    .left {
+        width: 50%;
+    }
+    .right {
         place-content: space-evenly;
     }
 
-    .left, .right{
+    .left,
+    .right {
         width: auto;
     }
 
-
-    .marketbox{
+    .marketbox {
         max-width: 800px;
         height: 100%;
     }
 
-    .market{
+    .market {
         border-bottom: 1px solid black;
         font-family: sans-serif;
         font-size: xx-large;
@@ -358,14 +349,14 @@ body{
         padding: 0px 0px 0px 7px;
     }
 
-    .marketbox:nth-child(2n)::-webkit-scrollbar{
+    .marketbox:nth-child(2n)::-webkit-scrollbar {
         width: 0%;
     }
-    .box1{
-       margin-top: 80px;
+    .box1 {
+        margin-top: 80px;
     }
-    .btn input{
-        background-color: #F29F22;
+    .btn input {
+        background-color: #f29f22;
         border: none;
         border-radius: 2px;
         color: #fff;
@@ -377,32 +368,31 @@ body{
     }
 }
 
-
-
 /* 600 media quary  */
 
-@media(max-width: 600px){
-    .marketbox{
+@media (max-width: 600px) {
+    .marketbox {
         max-width: 400px;
     }
 
-    .left{
-       width: 50%;
+    .left {
+        width: 50%;
     }
-    .right{
+    .right {
         width: 50%;
     }
 
-    .left, .right{
+    .left,
+    .right {
         gap: 1%;
     }
 
-    .marketbox{
+    .marketbox {
         max-width: 800px;
         height: 100%;
     }
 
-    .market{
+    .market {
         border-bottom: 1px solid black;
         font-family: sans-serif;
         font-size: x-large;
@@ -410,15 +400,15 @@ body{
         padding: 7px 0px 0px 3px;
     }
 
-    .marketbox:nth-child(2n)::-webkit-scrollbar{
+    .marketbox:nth-child(2n)::-webkit-scrollbar {
         width: 0%;
     }
-    .box1{
+    .box1 {
         max-width: 800;
         display: inline-flex;
     }
-    .btn input{
-        background-color: #F29F22;
+    .btn input {
+        background-color: #f29f22;
         border: none;
         border-radius: 2px;
         color: #fff;
@@ -430,43 +420,42 @@ body{
     }
 }
 
-
-
 /* 660 media quary  */
 
-@media(max-width: 660px){
-    .marketbox{
+@media (max-width: 660px) {
+    .marketbox {
         max-width: 250px;
     }
 
-    .left{
-       width: 50%;
+    .left {
+        width: 50%;
     }
-    .right{
+    .right {
         width: 50%;
     }
 
-    .left, .right{
+    .left,
+    .right {
         gap: 11%;
     }
 
-    .marketbox{
+    .marketbox {
         max-width: 800px;
         height: 100%;
         width: 101%;
     }
 
-    .marketbox:nth-child(2n)::-webkit-scrollbar{
+    .marketbox:nth-child(2n)::-webkit-scrollbar {
         width: 0%;
     }
-    .box1{
+    .box1 {
         max-width: 800;
         display: grid;
         justify-content: center;
     }
-    
+
     .input3 {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         display: grid;
         align-items: center;
         font-size: 70%;
@@ -488,8 +477,8 @@ body{
         justify-content: center;
     }
 
-    .btn input{
-        background-color: #F29F22;
+    .btn input {
+        background-color: #f29f22;
         border: none;
         border-radius: 2px;
         color: #fff;
@@ -506,139 +495,135 @@ body{
         justify-content: flex-end;
         padding-right: 20px;
         align-items: center;
-        
-        }
-    
-        .market{
-            border-bottom: 1px solid black;
-            font-family: sans-serif;
-            font-size: xx-large;
-            height: 7%;
-            padding: 7px 0px 0px 10px;
-        }
+    }
+
+    .market {
+        border-bottom: 1px solid black;
+        font-family: sans-serif;
+        font-size: xx-large;
+        height: 7%;
+        padding: 7px 0px 0px 10px;
+    }
 }
 
+/* 550 media quary  */
 
-
-    /* 550 media quary  */
-
-    @media(max-width: 550px){
-    .marketbox{
+@media (max-width: 550px) {
+    .marketbox {
         max-width: 400px;
     }
 
-    .admin{
+    .admin {
         display: flex;
         height: 10%;
         justify-content: flex-end;
         padding-right: 20px;
         align-items: center;
     }
-     
+
     .btn {
         display: grid;
         padding: 18px 0px 0px 35px;
         justify-content: center;
     }
 
-    .left{
+    .left {
         width: 50%;
-     }
-     .right{
-         width: 40%;
-         margin: 0;
-     }
- 
- 
-     .input1{
-         font-family: 'Poppins', sans-serif;
-         display: grid;
-         align-items: center;
-         font-size: 76%;
-         height: 100%;
-         margin: 0;
-     }
- 
-     .input3{
-         font-family: 'Poppins', sans-serif;
-         display: grid;
-        justify-content: center;
-         font-size: 79%;
-         height: 86%;
-     }
+    }
+    .right {
+        width: 40%;
+        margin: 0;
+    }
 
-     .input4 {
+    .input1 {
+        font-family: "Poppins", sans-serif;
+        display: grid;
+        align-items: center;
+        font-size: 76%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .input3 {
+        font-family: "Poppins", sans-serif;
+        display: grid;
+        justify-content: center;
+        font-size: 79%;
+        height: 86%;
+    }
+
+    .input4 {
         display: grid;
         align-items: center;
         font-size: 100%;
         height: 100%;
         width: 34%;
     }
- 
-     .box {
-         background-color: #F4F2F2;
-         display: grid;
-         width: 100%;
-         height: 100%;
-         padding: 25px 75px 0px 0px;
-     }
- 
-     .box1{
-         margin-top: 60px;
-         display: grid;
-         justify-content: center;
-     }
-    
-     .market{
-         border-bottom: 1px solid black;
-         font-family: sans-serif;
-         font-size: xx-large;
-         height: 7%;
-         padding: 12px 0px 0px 9px;
-     }
- 
-     .marketbox{
-         max-width: 800px;
-         height: 100%;
-         width: 102%;
-     }
- 
-     .marketbox:nth-child(2n)::-webkit-scrollbar{
-         width: 0%;
-     }
- 
-     .btn input{
-         background-color: #F29F22;
-         border: none;
-         border-radius: 2px;
-         color: #fff;
-         width: 100%;
-         height: 100%;
-         margin: 5% 2%;
-         font-size: large;
-         cursor: pointer;
-     }
 
+    .box {
+        background-color: #f4f2f2;
+        display: grid;
+        width: 100%;
+        height: 100%;
+        padding: 25px 75px 0px 0px;
+    }
+
+    .box1 {
+        margin-top: 60px;
+        display: grid;
+        justify-content: center;
+    }
+
+    .market {
+        border-bottom: 1px solid black;
+        font-family: sans-serif;
+        font-size: xx-large;
+        height: 7%;
+        padding: 12px 0px 0px 9px;
+    }
+
+    .marketbox {
+        max-width: 800px;
+        height: 100%;
+        width: 102%;
+    }
+
+    .marketbox:nth-child(2n)::-webkit-scrollbar {
+        width: 0%;
+    }
+
+    .btn input {
+        background-color: #f29f22;
+        border: none;
+        border-radius: 2px;
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        margin: 5% 2%;
+        font-size: large;
+        cursor: pointer;
+    }
 }
 /* 376 media */
 
-@media(max-width: 376px){
-    .marketbox{
+@media (max-width: 376px) {
+    .marketbox {
         max-width: 250px;
     }
 
-    .left{
-       width: 50%;
+    .left {
+        width: 50%;
     }
-    .right{
+    .right {
         width: 50%;
     }
 
-    .left, .right{
+    .left,
+    .right {
         gap: 4%;
     }
 
-    .marketbox{
+    .marketbox {
         max-width: 800px;
         height: 100%;
         width: 112%;
@@ -652,10 +637,10 @@ body{
         width: 50%;
     }
 
-    .marketbox:nth-child(2n)::-webkit-scrollbar{
+    .marketbox:nth-child(2n)::-webkit-scrollbar {
         width: 0%;
     }
-    .box1{
+    .box1 {
         max-width: 800;
         display: grid;
     }
@@ -666,8 +651,8 @@ body{
         justify-content: center;
     }
 
-    .btn input{
-        background-color: #F29F22;
+    .btn input {
+        background-color: #f29f22;
         border: none;
         border-radius: 2px;
         color: #fff;
@@ -684,43 +669,42 @@ body{
         justify-content: flex-end;
         padding-right: 20px;
         align-items: center;
-        
-        }
-    
-        .market{
-            border-bottom: 1px solid black;
-            font-family: sans-serif;
-            font-size: x-large;
-            height: 5%;
-            padding: 13px 0px 0px 10px;
-        }
+    }
+
+    .market {
+        border-bottom: 1px solid black;
+        font-family: sans-serif;
+        font-size: x-large;
+        height: 5%;
+        padding: 13px 0px 0px 10px;
+    }
 }
 
 /* Burger Menu */
-   
+
 #menu__toggle {
     opacity: 0;
-  }
-  
-  #menu__toggle:checked + .menu__btn > span {
+}
+
+#menu__toggle:checked + .menu__btn > span {
     transform: rotate(45deg);
-  }
-  
-  #menu__toggle:checked + .menu__btn > span::before {
+}
+
+#menu__toggle:checked + .menu__btn > span::before {
     top: 0;
     transform: rotate(0deg);
-  }
-  
-  #menu__toggle:checked + .menu__btn > span::after {
+}
+
+#menu__toggle:checked + .menu__btn > span::after {
     top: 0;
     transform: rotate(90deg);
-  }
-  
-  #menu__toggle:checked ~ .menu__box {
+}
+
+#menu__toggle:checked ~ .menu__box {
     left: 0 !important;
-  }
-  
-  .menu__btn {
+}
+
+.menu__btn {
     position: fixed;
     top: 20px;
     left: 20px;
@@ -728,30 +712,30 @@ body{
     height: 26px;
     cursor: pointer;
     z-index: 1;
-  }
-  
-  .menu__btn > span,
-  .menu__btn > span::before,
-  .menu__btn > span::after {
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
     display: block;
     position: absolute;
     width: 100%;
     height: 2px;
     background-color: #616161;
-    transition-duration: .25s;
-  }
-  
-  .menu__btn > span::before {
-    content: '';
+    transition-duration: 0.25s;
+}
+
+.menu__btn > span::before {
+    content: "";
     top: -8px;
-  }
-  
-  .menu__btn > span::after {
-    content: '';
+}
+
+.menu__btn > span::after {
+    content: "";
     top: 8px;
-  }
-  
-  .menu__box {
+}
+
+.menu__box {
     display: block;
     position: fixed;
     top: 0;
@@ -762,66 +746,65 @@ body{
     padding: 50px 0;
     list-style: none;
     background-color: #fff;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
-    transition-duration: .25s;
-  }
-ul{
-    list-style-type: none;margin: 0;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    transition-duration: 0.25s;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-  ul li:hover a{
-    color: #3579DE;
+ul li:hover a {
+    color: #3579de;
     background-color: #fff;
-  }
-  
-  .menu__item {
+}
+
+.menu__item {
     display: block;
     padding: 0px 24px;
     color: #333;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 20px;
     font-weight: 100;
     text-decoration: none;
-    transition-duration: .25s;
+    transition-duration: 0.25s;
     padding-top: 15%;
-  }
-  
-  .menu__item:hover {
+}
+
+.menu__item:hover {
     background-color: #ffffff;
-  }
-  
-  i {
+}
+
+i {
     padding-right: 10px;
-  }
-  
-  
-  
-  .overlay {
+}
+
+.overlay {
     display: none;
     position: fixed;
     top: 0;
-    left:0;
+    left: 0;
     width: 0; /* Start with zero width */
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
     z-index: -1; /* Ensure the overlay is above other elements */
     transition: width 0.3s ease; /* Smooth transition for width */
-  }
-  
-  .hamburger-menu {
+}
+
+.hamburger-menu {
     position: fixed;
     z-index: 0; /* Ensure the menu is above the overlay */
     /* Your existing styles for the hamburger-menu */
-  }
-  
-  .overlay-visible .overlay {
+}
+
+.overlay-visible .overlay {
     display: block;
     width: 100%; /* Expand the width to 75% when visible */
-  }
-  .logo_box {
+}
+.logo_box {
     position: relative;
     left: 15px;
-   max-width: 250px;
-   width: 100%;
-   }
+    max-width: 250px;
+    width: 100%;
+}

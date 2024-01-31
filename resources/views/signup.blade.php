@@ -18,7 +18,7 @@
 <div class="wrapper-right">
     <div class="forms">
         
-        <h1> Sign Up Now</h1>
+        <h1> Sign Up</h1>
         <form action="/register" method="POST">
             @csrf
         <div class="column">
