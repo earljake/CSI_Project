@@ -16,7 +16,7 @@ use App\Http\Controllers\employeeController;
 */
 
 Route::get('/', function () {
-    return view('table');
+    return view('landing');
 });
 
 Route::post('/register',[employeeController::class,'register']);
@@ -30,13 +30,23 @@ Route::post('/login',[employeeController::class,'login']);
 Route::get('/register', [employeeController::class, 'showRegistrationForm'])->name('register');
 
 Route::post('/clientreg',[employeeController::class,'clientreg']);
+Route::get('/login', [employeeController::class, 'showLoginForm'])->name('login');
 
+Route::post('/table',[employeeController::class,'table'])->name('table');
 
-
-Route::get('/',[ShowController::class,'show']);
+Route::get('/table',[ShowController::class,'show']);
 
 // routes/web.php
-
+    
 Route::get('/clientreg', [employeeController::class, 'showRegForm'])->name('clientreg');
 
 
+Route::get('/clientregistration', function () {
+    return view('clientregistration');
+});
+Route::get('/clientregistration', [employeeController::class, 'showClientRegistrationForm'])->name('clientregistration');
+
+
+Route::get('/landing', [employeeController::class, 'showLanding'])->name('landing');
+Route::get('/marketing', [employeeController::class, 'showMarketing'])->name('marketing');
+Route::get('/home', [employeeController::class, 'showHome'])->name('home');

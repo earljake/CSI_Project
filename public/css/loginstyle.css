@@ -160,3 +160,8 @@ button{
     right: 5%;
     top: 30%;
 }
+.error-message {
+    color: red;
+    margin-top: 10px;
+    background-color: white;
+}

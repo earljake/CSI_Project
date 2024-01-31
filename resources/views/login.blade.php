@@ -36,6 +36,11 @@
                                 <p>Not a member?  <a href="{{ route('register') }}"> Sign up now</a></p>
                             </div>
                         </form>
+                        <div class="error-message">
+                            @if ($errors->has('login'))
+                                {{ $errors->first('login') }}
+                            @endif
+                        </div>
                     </div>
                 </div>
         </div>

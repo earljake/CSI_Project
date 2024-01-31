@@ -45,7 +45,7 @@
             </div>
 
         </div>
-        <div class="button"> <button id="btn">Sign Up</button></div>
+        <div class="button"> <button id="btn">Register</button></div>
             </form>
             @isset($errorMessage)
             <div class="error-message">

@@ -24,7 +24,7 @@ class employeeController extends Controller
 
         if (auth()->attempt(['username' => $fields['loginusername'], 'password' => $fields['loginpassword']])) {
             // Authentication successful logic
-            return 'goods na';
+            return redirect ('/home');
         } 
         
         else {
@@ -59,8 +59,30 @@ class employeeController extends Controller
     {
         return view('clientreg'); // View name should match your actual view file
     }
+    public function showLoginForm()
+    {
+        return view('login'); // View name should match your actual view file
+    }
+    
+    public function showClientRegistrationForm()
+    {
+        return view('clientregistration'); // View name should match your actual view file
+    }
+    public function showLanding()
+    {
+        return view('landing'); // View name should match your actual view file
+    }
+    public function showMarketing()
+    {
+        return view('marketing'); // View name should match your actual view file
+    }
 
-    public function clientreg(Request $request) {
+    public function showHome()
+    {
+        return view('home'); // View name should match your actual view file
+    }
+
+    public function clientregistration(Request $request) {
         try {
             // Validate the request data...
             $fields = $request->validate([
