@@ -7,6 +7,10 @@ body {
     color: black;
 }
 
+.boxcl {
+    max-height: 50px;   height: 50%;
+}
+
 .admin {
     display: flex;
     height: 10%;

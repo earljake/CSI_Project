@@ -47,6 +47,26 @@ class employeeController extends Controller
         return redirect('/login');
     }
 
+
+    public function marketing(Request $request)
+    {
+        $fields = $request->validate([
+            'custom_id' => 'required',
+            'customer_name' => 'required',
+            'sales_person' => 'required',
+            'projectcategory' => 'required',
+            'projectdescription' => 'required',
+            'reference' => 'required',
+            'leaddate' => 'required',
+            'engagedate' => 'required',
+        ]);
+
+     
+
+        return redirect('/login');
+    }
+
+
     public function showRegistrationForm()
     {
         return view('signup');
@@ -162,7 +182,40 @@ class employeeController extends Controller
             }
 
             // Pass the error message to the view
-            return view('clientreg', compact('errorMessage'));
+            return view('clientregistration', compact('errorMessage'));
         }
     }
+    public function getCustomIdByName($name)
+    {
+        $record = Client::where('firstname', $name)->first();
+    
+        if ($record) {
+            return response()->json(['custom_id' => $record->custom_id]);
+        } else {
+            return response()->json(['custom_id' => null]);
+        }
+    }
+
+public function showForm()
+{
+    $names = Client::pluck('customername'); // Replace 'customername' with your actual column name
+
+    return view('marketing', compact('names'));
 }
+
+public function processForm(Request $request)
+{
+    $name = $request->input('customername');
+    $customId = $this->getCustomIdByName($name);
+
+    // Process the form using $customId
+
+    return view('your.success.view'); // Redirect to a success view or do further processing
+}
+
+
+
+
+}
+
+

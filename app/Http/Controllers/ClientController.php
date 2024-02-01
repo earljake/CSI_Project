@@ -28,7 +28,6 @@ class ClientController extends Controller
             throw $e;
         }
     }
-
     // ... other methods ...
 }
 

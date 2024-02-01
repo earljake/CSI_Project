@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="{{ asset('css/marketingstyle.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head><script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <body>
 
@@ -18,43 +19,48 @@
             <div class="box">
                 <div class="marketbox">
                     <div class="market">Marketing And Sales</div>
+                    <form action="/marketing" method="POST">
+                        @csrf
                     <div class="box1">
                         <div class="left">
                             <div class="input1">
 
+                                <p>Customer ID</p>
                                 <p>Customer Name</p>
                                 <p>Sales Person</p>
                                 <p>Project Category</p>
-                              
+
                             </div>
                             <div class="input2">
-                                
 
-                                <input list="fullNames" name="fullname" id="box" required placeholder="Type the name of the customer">
+
+                                <input type="text" name="custom_id" class="boxcl" id="customer-id" placeholder="Customer ID" readonly>
+
+                                <input list="fullNames" name="customer_name" class="boxcl" id="customer-name" required placeholder="Type the name of the customer" onchange="updateCustomerId()">
                                 <datalist id="fullNames">
                                     @foreach($uniqueFullNames as $fullName)
                                         <option value="{{ $fullName }}">
                                     @endforeach
                                 </datalist>
 
-                                <input list="salesperson" name="salesperson" id="box"placeholder="Type the name of the salesperson">
+                                <input list="salesperson" name="salesperson" class="boxcl" placeholder="Type the name of the salesperson">
                                 <datalist id="salesperson">
                                     <option value=""></option>
                                     <!-- Add other options as needed -->
                                 </datalist>
 
-                                <input list="projectcategory" name="projectcategory" id="box">
+                                <input list="projectcategory" name="projectcategory" class="boxcl">
                                 <datalist id="projectcategory">
                                     <option value="Supply Only"></option>
                                     <option value="Supply and Install"></option>
                                     <option value="Install Only"></option>
                                     <option value="Technical Support"></option>
                                     <option value="Rehab and Upgrade"></option>
-                                    
+
                                     <!-- Add other options as needed -->
                                 </datalist>
 
-                              
+
                             </div>
                         </div>
                         <div class="right">
@@ -65,16 +71,17 @@
                                 <p>Engage Date</p>
                             </div>
                             <div class="input4">
-                                <input type="text" name="reference" id="box">
-                                <input type="text" name="projectdescription" id="box">
-                                <input type="date" name="leaddate" id="box">
-                                <input type="date" name="engagedate" id="box">
+                                <input type="text" name="reference" class="boxcl">
+                                <input type="text" name="projectdescription" class="boxcl">
+                                <input type="date" name="leaddate" class="boxcl">
+                                <input type="date" name="engagedate" class="boxcl">
                             </div>
                         </div>
                     </div>
                     <div class="btn">
                         <input type="submit" value="Register">
                     </div>
+                    </form>
                 </div>
             </div>
             <div class="hamburger-menu">
@@ -105,14 +112,41 @@
                     document.getElementById('menu__toggle').addEventListener('change', function () {
                         document.body.classList.toggle('overlay-visible', this.checked);
                     });
+                
+                    function updateCustomerId() {
+                        var customerNameInput = document.getElementById('customer-name');
+                        var customerIdInput = document.getElementById('customer-id');
+                
+                        // Check if an option from the datalist is selected
+                        var selectedOption = document.querySelector('#fullNames option:checked');
+                        if (selectedOption) {
+                            // Assume you have a route in Laravel to fetch the custom ID by name
+                            var apiUrl = "/api/get-custom-id/" + encodeURIComponent(selectedOption.value);
+                
+                            fetch(apiUrl)
+                                .then(response => response.json())
+                                .then(data => {
+                                    // Update the Customer ID input
+                                    customerIdInput.value = data.custom_id;
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                });
+                        } else {
+                            // If no option is selected, clear the Customer ID input
+                            customerIdInput.value = "";
+                        }
+                    }
+                
                     @if(session('successMessage'))
-            Swal.fire({
-                icon: 'success',
-                title: 'Success!',
-                text: '{{ session('successMessage') }}',
-            });
-        @endif
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success!',
+                            text: '{{ session('successMessage') }}',
+                        });
+                    @endif
                 </script>
+                
             </div>
         </div>
     </div>
