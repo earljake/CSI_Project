@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
-
-
 use App\Models\User;
 use App\Models\Client;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Database\QueryException;
-
 
 class employeeController extends Controller
 {
@@ -25,23 +22,22 @@ class employeeController extends Controller
         if (auth()->attempt(['username' => $fields['loginusername'], 'password' => $fields['loginpassword']])) {
             // Authentication successful logic
             return redirect ('/home');
-        } 
-        
-        else {
+        } else {
             // Log the failed login attempt
             \Log::info('Failed login attempt: ' . $fields['loginusername']);
             return back()->withErrors(['login' => 'Invalid credentials. Please try again.']);
         }
        
     }
-    public function register(Request $request) {
-        $fields = $request -> validate([
+
+    public function register(Request $request)
+    {
+        $fields = $request->validate([
             'designation' => 'required',
             'firstname' => 'required',
             'lastname' => 'required',
             'username' => 'required',
             'password'=> ['required','min:8'],
-            
         ]);
 
         $fields['password'] = bcrypt($fields['password']);
@@ -53,36 +49,45 @@ class employeeController extends Controller
 
     public function showRegistrationForm()
     {
-        return view('signup'); // View name should match your actual view file
+        return view('signup');
     }
+
     public function showRegForm()
     {
-        return view('clientreg'); // View name should match your actual view file
+        return view('clientreg');
     }
+
     public function showLoginForm()
     {
-        return view('login'); // View name should match your actual view file
+        return view('login');
     }
-    
+
     public function showClientRegistrationForm()
     {
-        return view('clientregistration'); // View name should match your actual view file
+        return view('clientregistration');
     }
+
     public function showLanding()
     {
-        return view('landing'); // View name should match your actual view file
+        return view('landing');
     }
+
     public function showMarketing()
     {
-        return view('marketing'); // View name should match your actual view file
+        $uniqueFullNames = Client::distinct()
+            ->selectRaw("CONCAT(firstname, ' ', lastname) as full_name")
+            ->pluck('full_name');
+
+        return view('marketing', compact('uniqueFullNames'));
     }
 
     public function showHome()
     {
-        return view('home'); // View name should match your actual view file
+        return view('home');
     }
 
-    public function clientregistration(Request $request) {
+    public function clientregistration(Request $request)
+    {
         try {
             // Validate the request data...
             $fields = $request->validate([
@@ -105,6 +110,10 @@ class employeeController extends Controller
             ]);
 
             $category = $fields['category'];
+            $uniqueFullNames = Client::where('category', $fields['category'])
+                ->distinct()
+                ->selectRaw("CONCAT(firstname, ' ', lastname) as full_name")
+                ->pluck('full_name');
 
             // Set the starting custom_id based on the category
             $startingCustomId = 1;
@@ -141,8 +150,8 @@ class employeeController extends Controller
             $client->phone_number = $fields['phone_number'];
 
             $client->save();
-            return 'goods na';
-            //return view('clientregistration')->with('errorMessage', 'Client registered successfully.');
+
+            return view('clientregistration')->with('errorMessage', 'Client registered successfully.');
         } catch (QueryException $e) {
             if ($e->getCode() == '23000') {
                 // Set an error message to be displayed in the view
@@ -156,5 +165,4 @@ class employeeController extends Controller
             return view('clientreg', compact('errorMessage'));
         }
     }
-
 }

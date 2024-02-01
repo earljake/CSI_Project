@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/marketingstyle.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
+</head><script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <body>
 
@@ -21,29 +21,23 @@
                     <div class="box1">
                         <div class="left">
                             <div class="input1">
-                                <p>Customer Category</p>
+
                                 <p>Customer Name</p>
                                 <p>Sales Person</p>
                                 <p>Project Category</p>
-                                <p>Reference</p>
+                              
                             </div>
                             <div class="input2">
-                                <input list="customercategory" name="customercategory" id="box">
-                                <datalist id="customercategory">
-                                    <option value=""></option>
-                                    <!-- Add other options as needed -->
+                                
+
+                                <input list="fullNames" name="fullname" id="box" required placeholder="Type the name of the customer">
+                                <datalist id="fullNames">
+                                    @foreach($uniqueFullNames as $fullName)
+                                        <option value="{{ $fullName }}">
+                                    @endforeach
                                 </datalist>
 
-                                <input list="customername" name="customername" id="box">
-                                <datalist id="customername">
-                                    <option value="2"></option>
-                                    <option value="3"></option>
-                                    <option value="4"></option>
-                                    <option value="5"></option>
-                                    <!-- Add other options as needed -->
-                                </datalist>
-
-                                <input list="salesperson" name="salesperson" id="box">
+                                <input list="salesperson" name="salesperson" id="box"placeholder="Type the name of the salesperson">
                                 <datalist id="salesperson">
                                     <option value=""></option>
                                     <!-- Add other options as needed -->
@@ -51,20 +45,27 @@
 
                                 <input list="projectcategory" name="projectcategory" id="box">
                                 <datalist id="projectcategory">
-                                    <option value=""></option>
+                                    <option value="Supply Only"></option>
+                                    <option value="Supply and Install"></option>
+                                    <option value="Install Only"></option>
+                                    <option value="Technical Support"></option>
+                                    <option value="Rehab and Upgrade"></option>
+                                    
                                     <!-- Add other options as needed -->
                                 </datalist>
 
-                                <input type="text" name="reference" id="box">
+                              
                             </div>
                         </div>
                         <div class="right">
                             <div class="input3">
                                 <p>Project Description</p>
+                                <p>Reference</p>
                                 <p>Lead Date</p>
                                 <p>Engage Date</p>
                             </div>
                             <div class="input4">
+                                <input type="text" name="reference" id="box">
                                 <input type="text" name="projectdescription" id="box">
                                 <input type="date" name="leaddate" id="box">
                                 <input type="date" name="engagedate" id="box">
@@ -104,6 +105,13 @@
                     document.getElementById('menu__toggle').addEventListener('change', function () {
                         document.body.classList.toggle('overlay-visible', this.checked);
                     });
+                    @if(session('successMessage'))
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: '{{ session('successMessage') }}',
+            });
+        @endif
                 </script>
             </div>
         </div>

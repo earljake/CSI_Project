@@ -22,6 +22,11 @@ return new class extends Migration
             $table->string('address');
             $table->string('email');
             $table->string('phone_number');
+            $table->string('project_category')->nullable();
+            $table->string('project_description')->nullable();
+            $table->string('reference')->nullable();
+            $table->date('lead_date')->nullable();
+            $table->date('engage_date')->nullable();
         });
     }
 
