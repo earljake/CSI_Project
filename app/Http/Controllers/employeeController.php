@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Client;
 use App\Models\Employee;
+use App\Models\MarketingRecord;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Database\QueryException;
@@ -51,19 +52,31 @@ class employeeController extends Controller
     public function marketing(Request $request)
     {
         $fields = $request->validate([
-            'custom_id' => 'required',
+            'custom_id'=> 'sometimes',
             'customer_name' => 'required',
             'sales_person' => 'required',
-            'projectcategory' => 'required',
-            'projectdescription' => 'required',
+            'project_category' => 'required',
+            'project_description' => 'required',
             'reference' => 'required',
-            'leaddate' => 'required',
-            'engagedate' => 'required',
+            'lead_date' => 'required',
+            'engage_date' => 'required',
         ]);
+        
+    $marketingRecord = new MarketingRecord();
+    $marketingRecord->custom_id = $fields['custom_id']; // It's optional, may be null
+    $marketingRecord->customer_name = $fields['customer_name'];
+    $marketingRecord->sales_person = $fields['sales_person'];
+    $marketingRecord->project_category = $fields['project_category'];
+    $marketingRecord->project_description = $fields['project_description'];
+    $marketingRecord->reference = $fields['reference'];
+    $marketingRecord->lead_date = $fields['lead_date'];
+    $marketingRecord->engage_date = $fields['engage_date'];
 
-     
+    // Save the record to the database
+    $marketingRecord->save();
 
-        return redirect('/login');
+
+        return redirect('/marketing');
     }
 
 
@@ -198,19 +211,19 @@ class employeeController extends Controller
 
 public function showForm()
 {
-    $names = Client::pluck('customername'); // Replace 'customername' with your actual column name
+    $names = Client::pluck('firstname'); // Replace 'customername' with your actual column name
 
     return view('marketing', compact('names'));
 }
 
 public function processForm(Request $request)
 {
-    $name = $request->input('customername');
+    $name = $request->input('customer_name');
     $customId = $this->getCustomIdByName($name);
 
     // Process the form using $customId
 
-    return view('your.success.view'); // Redirect to a success view or do further processing
+    return view('marketing'); // Redirect to a success view or do further processing
 }
 
 

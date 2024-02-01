@@ -46,6 +46,7 @@ Route::post('/clientregistration', [employeeController::class, 'clientregistrati
 
 Route::get('/landing', [employeeController::class, 'showLanding'])->name('landing');
 Route::get('/marketing', [employeeController::class, 'showMarketing'])->name('marketing');
+Route::post('/marketing',[employeeController::class,'marketing?']);
 Route::get('/home', [employeeController::class, 'showHome'])->name('home');
 Route::post('/process-form', [employeeController::class, 'processForm']);
 Route::get('/api/get-custom-id/{name}', [employeeController::class, 'getCustomIdByName']);

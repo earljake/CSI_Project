@@ -19,8 +19,8 @@
             <div class="box">
                 <div class="marketbox">
                     <div class="market">Marketing And Sales</div>
-                    <form action="/marketing" method="POST">
-                        @csrf
+                    <form action="{{ route('marketing') }}" method="POST">
+                      @csrf
                     <div class="box1">
                         <div class="left">
                             <div class="input1">
@@ -43,13 +43,13 @@
                                     @endforeach
                                 </datalist>
 
-                                <input list="salesperson" name="salesperson" class="boxcl" placeholder="Type the name of the salesperson">
-                                <datalist id="salesperson">
+                                <input list="sales_person" name="sales_person" class="boxcl" placeholder="Type the name of the salesperson">
+                                <datalist id="sales_person">
                                     <option value=""></option>
                                     <!-- Add other options as needed -->
                                 </datalist>
 
-                                <input list="projectcategory" name="projectcategory" class="boxcl">
+                                <input list="projectcategory" name="project_category" class="boxcl">
                                 <datalist id="projectcategory">
                                     <option value="Supply Only"></option>
                                     <option value="Supply and Install"></option>
@@ -72,9 +72,9 @@
                             </div>
                             <div class="input4">
                                 <input type="text" name="reference" class="boxcl">
-                                <input type="text" name="projectdescription" class="boxcl">
-                                <input type="date" name="leaddate" class="boxcl">
-                                <input type="date" name="engagedate" class="boxcl">
+                                <input type="text" name="project_description" class="boxcl">
+                                <input type="date" name="lead_date" class="boxcl">
+                                <input type="date" name="engage_date" class="boxcl">
                             </div>
                         </div>
                     </div>
@@ -114,14 +114,15 @@
                     });
                 
                     function updateCustomerId() {
-                        var customerNameInput = document.getElementById('customer-name');
-                        var customerIdInput = document.getElementById('customer-id');
+                        var customerNameInput = document.getElementById('customer_name');
+                        var customerIdInput = document.getElementById('customer_id');
                 
                         // Check if an option from the datalist is selected
                         var selectedOption = document.querySelector('#fullNames option:checked');
                         if (selectedOption) {
                             // Assume you have a route in Laravel to fetch the custom ID by name
-                            var apiUrl = "/api/get-custom-id/" + encodeURIComponent(selectedOption.value);
+                            var apiUrl = "http://localhost:8000/get-custom-id/" + encodeURIComponent(selectedOption.value);
+
                 
                             fetch(apiUrl)
                                 .then(response => response.json())

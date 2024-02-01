@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('marketing', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedInteger('custom_id');
+            $table->string('custom_id');
             $table->string('customer_name'); 
-            $table->string('sales_person');
+            $table->string('sales_person');;
             $table->string('reference');
             $table->string('project_category')->nullable();
             $table->string('project_description')->nullable();
