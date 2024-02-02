@@ -29,9 +29,9 @@
             <thead>
                 <tr>
                     <th>Customer ID</th>
-                    <th>Customer Category</th>
-                    <th>Last Name</th>
+                    <th>Customer Category</th>                   
                     <th>First Name</th>
+                    <th>Last Name</th>
                     <th>Email</th>
                     <th>Address</th>
                     <th>Mobile Number</th>
@@ -52,8 +52,8 @@
                             @else
                             @endif
                         </td>
-                        <td>{{ $data->lastname }}</td>
                         <td>{{ $data->firstname }}</td>
+                        <td>{{ $data->lastname }}</td>
                         <td>{{ $data->email }}</td>
                         <td>{{ $data->address }}</td>
                         <td>{{ $data->phone_number }}</td>

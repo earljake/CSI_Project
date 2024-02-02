@@ -61,21 +61,20 @@ class employeeController extends Controller
             'lead_date' => 'required',
             'engage_date' => 'required',
         ]);
-        
-    $marketingRecord = new MarketingRecord();
-    $marketingRecord->custom_id = $fields['custom_id']; // It's optional, may be null
-    $marketingRecord->customer_name = $fields['customer_name'];
-    $marketingRecord->sales_person = $fields['sales_person'];
-    $marketingRecord->project_category = $fields['project_category'];
-    $marketingRecord->project_description = $fields['project_description'];
-    $marketingRecord->reference = $fields['reference'];
-    $marketingRecord->lead_date = $fields['lead_date'];
-    $marketingRecord->engage_date = $fields['engage_date'];
-
-    // Save the record to the database
-    $marketingRecord->save();
-
-
+    
+        $marketingRecord = new MarketingRecord();
+        $marketingRecord->custom_id = $fields['custom_id']; // It's optional, may be null
+        $marketingRecord->customer_name = $fields['customer_name'];
+        $marketingRecord->sales_person = $fields['sales_person'];
+        $marketingRecord->project_category = $fields['project_category'];
+        $marketingRecord->project_description = $fields['project_description'];
+        $marketingRecord->reference = $fields['reference'];
+        $marketingRecord->lead_date = $fields['lead_date'];
+        $marketingRecord->engage_date = $fields['engage_date'];
+    
+        // Save the record to the database
+        $marketingRecord->save();
+    
         return redirect('/marketing');
     }
 
@@ -107,12 +106,28 @@ class employeeController extends Controller
 
     public function showMarketing()
     {
-        $uniqueFullNames = Client::distinct()
-            ->selectRaw("CONCAT(firstname, ' ', lastname) as full_name")
-            ->pluck('full_name');
-
-        return view('marketing', compact('uniqueFullNames'));
+        $uniqueCompanyNames = Client::distinct()->pluck('company_name');
+    
+        return view('marketing', compact('uniqueCompanyNames'));
     }
+    
+    public function getCustomIdByCompany($companyName)
+    {
+        \Log::info("Fetching custom ID for company: $companyName");
+    
+        $record = Client::where('company_name', $companyName)->first();
+    
+        if ($record) {
+            \Log::info("Custom ID found: $record->custom_id");
+            return response()->json(['custom_id' => $record->custom_id]);
+        } else {
+            \Log::warning('Record not found');
+            return response()->json(['error' => 'Record not found'], 404);
+        }
+    }
+    
+
+    
 
     public function showHome()
     {
@@ -143,10 +158,7 @@ class employeeController extends Controller
             ]);
 
             $category = $fields['category'];
-            $uniqueFullNames = Client::where('category', $fields['category'])
-                ->distinct()
-                ->selectRaw("CONCAT(firstname, ' ', lastname) as full_name")
-                ->pluck('full_name');
+
 
             // Set the starting custom_id based on the category
             $startingCustomId = 1;
@@ -198,33 +210,17 @@ class employeeController extends Controller
             return view('clientregistration', compact('errorMessage'));
         }
     }
-    public function getCustomIdByName($name)
-    {
-        $record = Client::where('firstname', $name)->first();
+
     
-        if ($record) {
-            return response()->json(['custom_id' => $record->custom_id]);
-        } else {
-            return response()->json(['custom_id' => null]);
-        }
-    }
 
 public function showForm()
 {
-    $names = Client::pluck('firstname'); // Replace 'customername' with your actual column name
-
-    return view('marketing', compact('names'));
+  
+    $uniqueFullNames = Client::pluck('firstname')->unique();
+    return view('marketing', compact('uniqueFullNames'));
 }
 
-public function processForm(Request $request)
-{
-    $name = $request->input('customer_name');
-    $customId = $this->getCustomIdByName($name);
 
-    // Process the form using $customId
-
-    return view('marketing'); // Redirect to a success view or do further processing
-}
 
 
 

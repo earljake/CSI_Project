@@ -25,7 +25,7 @@
                         <div class="left">
                             <div class="input1">
 
-                                <p>Customer ID</p>
+                                
                                 <p>Customer Name</p>
                                 <p>Sales Person</p>
                                 <p>Project Category</p>
@@ -34,12 +34,13 @@
                             <div class="input2">
 
 
-                                <input type="text" name="custom_id" class="boxcl" id="customer-id" placeholder="Customer ID" readonly>
+                                
 
-                                <input list="fullNames" name="customer_name" class="boxcl" id="customer-name" required placeholder="Type the name of the customer" onchange="updateCustomerId()">
-                                <datalist id="fullNames">
-                                    @foreach($uniqueFullNames as $fullName)
-                                        <option value="{{ $fullName }}">
+                                <!-- Update the onchange attribute to call updateCustomerId instead of updateCompanyId -->
+                                <input list="companyNames" name="customer_name" class="boxcl" id="customer-name" required placeholder="Type the name of the customer" onchange="updateCustomerId()">
+                                <datalist id="companyNames">
+                                    @foreach($uniqueCompanyNames as $companyName)
+                                        <option value="{{ $companyName }}">
                                     @endforeach
                                 </datalist>
 
@@ -84,6 +85,23 @@
                     </form>
                 </div>
             </div>
+            <div class="table-wrapper">
+                <table class="fl-table">
+                    <thead>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>Customer Category</th>                   
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Mobile Number</th>
+                            <th>Company Name</th>
+                        </tr>
+                    </thead>
+
+                </table>
+            </div>
             <div class="hamburger-menu">
                 <input id="menu__toggle" type="checkbox" />
                 <label class="menu__btn" for="menu__toggle">
@@ -109,36 +127,40 @@
                 <div class="overlay"></div>
 
                 <script>
-                    document.getElementById('menu__toggle').addEventListener('change', function () {
-                        document.body.classList.toggle('overlay-visible', this.checked);
-                    });
-                
-                    function updateCustomerId() {
-                        var customerNameInput = document.getElementById('customer_name');
-                        var customerIdInput = document.getElementById('customer_id');
-                
-                        // Check if an option from the datalist is selected
-                        var selectedOption = document.querySelector('#fullNames option:checked');
-                        if (selectedOption) {
-                            // Assume you have a route in Laravel to fetch the custom ID by name
-                            var apiUrl = "http://localhost:8000/get-custom-id/" + encodeURIComponent(selectedOption.value);
+              document.addEventListener('DOMContentLoaded', function () {
+            // Add change event listener to customer-name input field
+            document.getElementById('customer-name').addEventListener('change', updateCustomerId);
 
-                
-                            fetch(apiUrl)
-                                .then(response => response.json())
-                                .then(data => {
-                                    // Update the Customer ID input
-                                    customerIdInput.value = data.custom_id;
-                                })
-                                .catch(error => {
-                                    console.error('Error:', error);
-                                });
-                        } else {
-                            // If no option is selected, clear the Customer ID input
-                            customerIdInput.value = "";
-                        }
-                    }
-                
+            // Add other event listeners as needed
+        });
+
+        fdocument.addEventListener('DOMContentLoaded', function () {
+    // Add change event listener to customer-name input field
+    document.getElementById('customer-name').addEventListener('change', function () {
+        var customerNameInput = document.getElementById('customer-name');
+        var customerIdInput = document.getElementById('customer-id');
+
+        // Get the company name from the selected option
+        var companyName = customerNameInput.value;
+
+        // Call the Laravel controller method with the company name
+        fetch(`/get-custom-id-by-name/${encodeURIComponent(companyName)}`)
+            .then(response => response.json())
+            .then(data => {
+                // Update the Customer ID input
+                customerIdInput.value = data.custom_id;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    });
+
+    // Add other event listeners or code as needed
+});
+
+
+
+            
                     @if(session('successMessage'))
                         Swal.fire({
                             icon: 'success',

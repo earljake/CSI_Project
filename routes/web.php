@@ -46,7 +46,11 @@ Route::post('/clientregistration', [employeeController::class, 'clientregistrati
 
 Route::get('/landing', [employeeController::class, 'showLanding'])->name('landing');
 Route::get('/marketing', [employeeController::class, 'showMarketing'])->name('marketing');
-Route::post('/marketing',[employeeController::class,'marketing?']);
+Route::post('/marketing',[employeeController::class,'marketing']);
 Route::get('/home', [employeeController::class, 'showHome'])->name('home');
 Route::post('/process-form', [employeeController::class, 'processForm']);
-Route::get('/api/get-custom-id/{name}', [employeeController::class, 'getCustomIdByName']);
+
+Route::get('/get-custom-id-by-company/{companyName}', [employeeController::class, 'getCustomIdByCompany']);
+Route::get('/marketing', [employeeController::class, 'showMarketing'])->name('marketing');
+Route::get('/get-custom-id-by-company/{companyName}', [employeeController::class, 'getCustomIdByCompany']);
+Route::get('/get-custom-id-by-name/{companyName}', [employeeController::class, 'getCustomIdByName']);
