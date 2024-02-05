@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 <body>
 
@@ -25,7 +28,7 @@
                         <div class="left">
                             <div class="input1">
 
-                                
+                                <p>Customer ID</p>
                                 <p>Customer Name</p>
                                 <p>Sales Person</p>
                                 <p>Project Category</p>
@@ -35,14 +38,22 @@
 
 
                                 
-
+                        
+                                
+                       
+                                    <input type="text" id="companyName" name="custom_id" class="boxcl" readonly >
+                               
+                            
+                                <!-- Display other company information as needed -->
+                       
                                 <!-- Update the onchange attribute to call updateCustomerId instead of updateCompanyId -->
-                                <input list="companyNames" name="customer_name" class="boxcl" id="customer-name" required placeholder="Type the name of the customer" onchange="updateCustomerId()">
+                                <div class="customer_box"><input list="companyNames" name="customer_name" class="boxcl" id="customer-name" required placeholder="Type the name of the customer" onchange="updateCustomId()">
                                 <datalist id="companyNames">
                                     @foreach($uniqueCompanyNames as $companyName)
                                         <option value="{{ $companyName }}">
                                     @endforeach
                                 </datalist>
+                                <button type="button" onclick="displayCustomId()">Show Customer ID</button></div>
 
                                 <input list="sales_person" name="sales_person" class="boxcl" placeholder="Type the name of the salesperson">
                                 <datalist id="sales_person">
@@ -89,17 +100,28 @@
                 <table class="fl-table">
                     <thead>
                         <tr>
-                            <th>Customer ID</th>
-                            <th>Customer Category</th>                   
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                            <th>Mobile Number</th>
-                            <th>Company Name</th>
+                            <th>Customer Name</th>
+                            <th>Sales Person</th>                   
+                            <th>Project Category</th>
+                            <th>Project Description</th>
+                            <th>Reference</th>
+                            <th>Lead Date</th>
+                            <th>Engage Date</th>
                         </tr>
                     </thead>
-
+                    <tbody>
+                        @foreach ($data as $data)
+                            <tr>
+                                <td>{{ $data->customer_name }}</td>
+                                <td>{{ $data->sales_person }}</td>
+                                <td>{{ $data->project_category }}</td>
+                                <td>{{ $data->project_description }}</td>
+                                <td>{{ $data->reference }}</td>
+                                <td>{{ $data->lead_date }}</td>
+                                <td>{{ $data->engage_date }}</td>
+                            </tr>
+                        @endforeach
+                    <tbody>
                 </table>
             </div>
             <div class="hamburger-menu">
@@ -126,49 +148,33 @@
                 </div>
                 <div class="overlay"></div>
 
-                <script>
-              document.addEventListener('DOMContentLoaded', function () {
-            // Add change event listener to customer-name input field
-            document.getElementById('customer-name').addEventListener('change', updateCustomerId);
+                <script defer> 
 
-            // Add other event listeners as needed
-        });
-
-        fdocument.addEventListener('DOMContentLoaded', function () {
-    // Add change event listener to customer-name input field
-    document.getElementById('customer-name').addEventListener('change', function () {
-        var customerNameInput = document.getElementById('customer-name');
-        var customerIdInput = document.getElementById('customer-id');
-
-        // Get the company name from the selected option
-        var companyName = customerNameInput.value;
-
-        // Call the Laravel controller method with the company name
-        fetch(`/get-custom-id-by-name/${encodeURIComponent(companyName)}`)
-            .then(response => response.json())
-            .then(data => {
-                // Update the Customer ID input
-                customerIdInput.value = data.custom_id;
-            })
-            .catch(error => {
-                console.error('Error:', error);
+function displayCustomId() {
+            var companyName = document.getElementById('customer-name').value;
+            console.log('Company Name:', companyName);
+            // Make an AJAX request to fetch custom_id based on company_name
+            $.ajax({
+                url: "{{ route('getCustomId') }}", // Replace with your route to fetch custom_id
+                type: 'GET',
+                data: { company_name: companyName },
+                success: function(response) {
+                    document.getElementById('companyName').value = response.custom_id;
+                },
+                error: function(error) {
+                    console.error('Error fetching custom_id:', error);
+                }
             });
-    });
+        }
 
-    // Add other event listeners or code as needed
-});
-
-
-
-            
-                    @if(session('successMessage'))
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Success!',
-                            text: '{{ session('successMessage') }}',
-                        });
-                    @endif
-                </script>
+        @if(session('successMessage'))
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: '{{ session('successMessage') }}',
+            });
+        @endif
+    </script>
                 
             </div>
         </div>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShowController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\employeeController;
 
 /*
@@ -36,6 +37,7 @@ Route::post('/table',[employeeController::class,'table'])->name('table');
 
 Route::get('/table',[ShowController::class,'show']);
 
+
 // routes/web.php
     
 Route::get('/clientreg', [employeeController::class, 'showRegForm'])->name('clientreg');
@@ -54,3 +56,8 @@ Route::get('/get-custom-id-by-company/{companyName}', [employeeController::class
 Route::get('/marketing', [employeeController::class, 'showMarketing'])->name('marketing');
 Route::get('/get-custom-id-by-company/{companyName}', [employeeController::class, 'getCustomIdByCompany']);
 Route::get('/get-custom-id-by-name/{companyName}', [employeeController::class, 'getCustomIdByName']);
+// Route::get('/clientregistration/{company_name}', [UserController::class, 'getByCompanyName'])->name('company.show');
+// Route::get('/clientregistrations/{name}', [UserController::class, 'getClientData']);
+// Route::post('/marketing', [UserController::class, 'getCustomId'])->name('marketing');
+// Route::post('/get-custom-id-by-client', [UserController::class, 'getCustomIdByClient'])->name('get.custom.id.by.client');
+Route::get('/getCustomId', [employeeController::class, 'getCustomId'])->name('getCustomId');

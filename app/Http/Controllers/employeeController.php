@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Client;
 use App\Models\Employee;
-use App\Models\MarketingRecord;
+use App\Models\Marketing;
 use Illuminate\Http\Request;
+use App\Models\MarketingRecord;
 use Illuminate\Validation\Rule;
 use Illuminate\Database\QueryException;
 
@@ -107,22 +108,21 @@ class employeeController extends Controller
     public function showMarketing()
     {
         $uniqueCompanyNames = Client::distinct()->pluck('company_name');
+        $data = Marketing::all();
     
-        return view('marketing', compact('uniqueCompanyNames'));
+        return view('marketing', compact('uniqueCompanyNames', 'data'));
     }
     
-    public function getCustomIdByCompany($companyName)
+    public function getCustomIdByCompany(Request $request)
     {
-        \Log::info("Fetching custom ID for company: $companyName");
+        $companyName = $request->input('companyName');
+
+        $company = Client::where('company_name', $companyName)->first();
     
-        $record = Client::where('company_name', $companyName)->first();
-    
-        if ($record) {
-            \Log::info("Custom ID found: $record->custom_id");
-            return response()->json(['custom_id' => $record->custom_id]);
+        if ($company) {
+            return response()->json(['custom_id' => $company->custom_id]);
         } else {
-            \Log::warning('Record not found');
-            return response()->json(['error' => 'Record not found'], 404);
+            return response()->json(['error' => 'Company not found.'], 404);
         }
     }
     
@@ -221,7 +221,12 @@ public function showForm()
 }
 
 
+public function getCustomId(Request $request) {
+    $customerName = $request->input('company_name');
+    $customId = Client::where('company_name', $customerName)->value('custom_id');
 
+    return response()->json(['custom_id' => $customId]);
+}
 
 
 
