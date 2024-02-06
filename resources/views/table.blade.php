@@ -32,10 +32,12 @@
                     <th>Customer Category</th>                   
                     <th>First Name</th>
                     <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Address</th>
-                    <th>Mobile Number</th>
                     <th>Company Name</th>
+                    <th>Email</th>
+                    <th>Mobile Number</th>
+                    <th>Address</th>
+                 
+                
                 </tr>
             </thead>
             <tbody>
@@ -54,10 +56,12 @@
                         </td>
                         <td>{{ $data->firstname }}</td>
                         <td>{{ $data->lastname }}</td>
-                        <td>{{ $data->email }}</td>
-                        <td>{{ $data->address }}</td>
-                        <td>{{ $data->phone_number }}</td>
                         <td>{{ $data->company_name }}</td>
+                        <td>{{ $data->email }}</td>
+                        <td>{{ $data->phone_number }}</td>
+                        <td>{{ $data->address }}</td>
+                     
+                    
                     </tr>
                 @endforeach
             <tbody>

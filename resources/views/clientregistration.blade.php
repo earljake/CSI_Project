@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/clientregistration.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
     <div class="admin">
@@ -30,15 +31,15 @@
                     <p>Address</p>
                 </div>
                     <div class="input2">
-                        <select name="category" id="custcat">
+                        <select name="category" required id="custcat">
                             <option value="" disabled selected>Customer Category</option>
                             <option value="1">Residential</option>
                             <option value="2">Commercial</option>
                             <option value="3">Government</option>
                           </select>
-                        <input type="text" name="lastname" id="last">
-                        <input type="text" name="firstname" id="last">
-                        <input type="text" name="address" id="last">
+                        <input type="text" name="lastname" id="last" required>
+                        <input type="text" name="firstname" id="last" required>
+                        <input type="text" name="address" id="last" required>
                     </div>
                 </div>
                     <div class="right">
@@ -48,9 +49,9 @@
                         <p>Phone Number</p>
                     </div>
                     <div class="input4">
-                    <input type="text" name="company_name" id="num">
-                    <input type="Email" name="email" id="num">
-                    <input type="text" name="phone_number" id="num">
+                    <input type="text" name="company_name" id="num" required>
+                    <input type="Email" name="email" id="num" required>
+                    <input type="text" name="phone_number" id="num" required>
                     </div>
                     </div>
                     </div>
@@ -96,9 +97,11 @@
                 <div class="overlay"></div>
 
                 <script>
-                    document.getElementById('menu__toggle').addEventListener('change', function () {
-                        document.body.classList.toggle('overlay-visible', this.checked);
-                    });
+                 window.onload = function () {
+        @isset($successMessage)
+            alert("{{ $successMessage }}");
+        @endisset
+    };
                 </script>
             </div>
     </div>

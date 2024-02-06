@@ -78,7 +78,14 @@ class employeeController extends Controller
     
         return redirect('/marketing');
     }
-
+    public function store(Request $request)
+    {
+        // Your code to store data goes here
+    
+        $successMessage = "Data has been successfully stored!"; // Set your success message
+    
+        return view('your.view.name', compact('successMessage'));
+    }
 
     public function showRegistrationForm()
     {

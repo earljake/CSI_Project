@@ -55,13 +55,13 @@
                                 </datalist>
                                 <button type="button" onclick="displayCustomId()">Show Customer ID</button></div>
 
-                                <input list="sales_person" name="sales_person" class="boxcl" placeholder="Type the name of the salesperson">
+                                <input list="sales_person" name="sales_person" required class="boxcl" placeholder="Type the name of the salesperson">
                                 <datalist id="sales_person">
                                     <option value=""></option>
                                     <!-- Add other options as needed -->
                                 </datalist>
 
-                                <input list="projectcategory" name="project_category" class="boxcl">
+                                <input list="projectcategory" required name="project_category" class="boxcl">
                                 <datalist id="projectcategory">
                                     <option value="Supply Only"></option>
                                     <option value="Supply and Install"></option>
@@ -83,10 +83,10 @@
                                 <p>Engage Date</p>
                             </div>
                             <div class="input4">
-                                <input type="text" name="reference" class="boxcl">
-                                <input type="text" name="project_description" class="boxcl">
-                                <input type="date" name="lead_date" class="boxcl">
-                                <input type="date" name="engage_date" class="boxcl">
+                                <input type="text"  name="reference" class="boxcl" required>
+                                <input type="text" name="project_description" class="boxcl" required>
+                                <input type="date" name="lead_date" class="boxcl" required>
+                                <input type="date" name="engage_date" class="boxcl" required >
                             </div>
                         </div>
                     </div>
